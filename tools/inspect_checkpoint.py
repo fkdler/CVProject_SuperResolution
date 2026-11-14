@@ -10,6 +10,8 @@ from tools.reference_loader import ROOT, load_reference
 
 
 def main():
+    from tools.cloud_guard import require_cloud_workspace
+    require_cloud_workspace()
     import torch
     import yaml
 

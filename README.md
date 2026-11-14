@@ -1,8 +1,11 @@
 # DRCT-L ×4 的 MindSpore 复现
 
 CV 课程大作业，目标运行环境为 **MindSpore 2.7.2 / Ascend 910B4**。
-当前完成官方源码分析、工程初始化、CPU 结构审计与首批基础模块编写。
-完整 MindSpore DRCT-L、权重转换、Set14 评测与训练仍在后续阶段。
+当前已编写完整MindSpore DRCT-L、严格权重转换和逐层/完整输出对齐工具。
+Ascend PYNATIVE和GRAPH O0完整输出对齐均通过；Set14评测与训练尚未执行。
+
+**计算约束：所有模型、参考生成、权重转换和数值测试仅在ModelArts执行。**
+本地仅编辑源码、静态检查、整理和传输文件，不安装或调用任何推理框架。
 
 ## 已确认的基线
 
@@ -38,58 +41,41 @@ experiments/        大日志、图像、检查点，内容忽略 Git
 docs/               分析、迁移、进度及小型验证结果
 ```
 
-## 本地开发验证（Windows）
-
-当前已创建 `.venv-reference`，与全局及其他实验环境分离。已有环境直接运行：
+## 本地源码操作（Windows）
 
 ```powershell
-.\.venv-reference\Scripts\python.exe -m tools.fetch_reference
-.\.venv-reference\Scripts\python.exe -m tools.inspect_reference
-.\.venv-reference\Scripts\python.exe -m pytest -q -ra
+python -S tools/static_check.py
+python -S tools/build_cloud_bundle.py
 ```
 
-新环境从项目根目录创建：
-
-```powershell
-python -m venv .venv-reference
-.\.venv-reference\Scripts\python.exe -m pip install torch --index-url https://download.pytorch.org/whl/cpu
-.\.venv-reference\Scripts\python.exe -m pip install -r requirements/reference.txt
-.\.venv-reference\Scripts\python.exe -m tools.fetch_reference
-```
-
-本阶段实测依赖见 [环境快照](docs/verification/reference_environment.txt)。CPU PyTorch
-用于源码与迁移对照，和目标 MindSpore 分开。审计工具在内存中加载原始网络定义，
-只去掉注册装饰器并载入 BasicSR 所需的两类辅助函数，避免安装完整 CUDA 训练栈；
-这不是官方 BasicSR 端到端评测。上游文件保持原样，并核查源码哈希。
-
-下载官方权重到 `weights/DRCT-L_X4.pth` 后执行：
-
-```powershell
-.\.venv-reference\Scripts\python.exe -m tools.inspect_checkpoint weights/DRCT-L_X4.pth
-```
-
-审计输出在 `docs/verification/`。`params` 与 `params_ema` 分别严格检查，
-不静默回退。权重不进入 Git。
-
-需要重建基础模块参考输入、输出与输入梯度时：
-
-```powershell
-.\.venv-reference\Scripts\python.exe -m tools.generate_primitive_fixtures
-```
+以上只使用标准库处理文本与文件，不导入框架或执行数值测试。
+源码包忽略凭据、环境和权重；现有官方权重另行传输。
+第一阶段已有的本地CPU结果和 [环境快照](docs/verification/reference_environment.txt)
+保留为历史记录，原本地参考环境不再调用。所有数值工具和pytest收集入口都有云端保护。
 
 ## MindSpore 验证入口（待运行）
 
-已编写窗口划分/合并、PatchEmbed/UnEmbed、MLP 和 PixelShuffle；
-MS 测试使用已生成的官方 PyTorch 参考数据，目标环境无需安装 PyTorch。
-先在现有 ModelArts 环境核对 Python/MS/CANN/NPU。安装缺失的 pytest 前应确认
-使用项目隔离环境或预置环境认可的方式，勿直接覆盖镜像依赖。
+已编写窗口划分/合并、PatchEmbed/UnEmbed、MLP、Attention、Swin、RDG、
+PixelShuffle、DropPath与完整12组L网络。目标MindSpore环境无需安装PyTorch；
+参考输出与NumPy参数包在另一个云端参考环境生成。
+先核对现有ModelArts环境，不覆盖预置MindSpore/CANN依赖。
+详细连接、环境隔离、转换与验证顺序见 [云端操作单](docs/cloud_validation.md)。
 
 在已具备 NumPy 与 pytest 的 **MindSpore 2.7.2** 环境，项目根目录运行：
 
 ```bash
-python -c "import mindspore as ms; assert ms.__version__ == '2.7.2'; ms.set_device('Ascend'); import pytest; raise SystemExit(pytest.main(['-q', 'tests/test_mindspore_primitives.py']))"
+. /usr/local/Ascend/cann-8.5.2/set_env.sh
+export PYTHONPATH="$PWD/src:$PWD:$PYTHONPATH"
+python -m tools.probe_cloud --run-check
+python -m pytest tests/test_mindspore_primitives.py tests/test_mindspore_network.py -q -ra --ms-mode pynative
 ```
 
-当前本地没有 MindSpore，目标运行结果尚未验证。后续先补齐 WindowAttention、Swin、
-RDG 与完整 L 网络，完成 FP32 数值一致性与 Set14 baseline 后，再实现训练及改进。
-本阶段没有连接云端、创建实例或启动训练。
+转换与对齐入口分别为`tools.export_reference_bundle`、`tools.convert_checkpoint`和
+`tools.verify_alignment`。强制检查完整权重，记录来源/分支/产物哈希，拒绝不完整映射。
+目前仅预训练加载路径，不宣称从零初始化与官方训练随机数流相同。
+
+默认卷积使用等价的FP32 slice/stack/GEMM计算，保持原OIHW权重、bias和零padding。
+原生Ascend卷积在本环境的完整输出对齐未过原门槛，`conv_backend='native'`仅保留诊断用途；
+等价后端在两个合成输入上的最大输出绝对误差为PYNATIVE约3.16e-6、GRAPH O0约3.43e-6，
+均通过原门槛。转换后的权重已备份至`weights/drct_l_x4_params_ema.ckpt`（不进入Git）。
+这不等于Set14指标已复现。完整证据见 [适配验证记录](docs/verification/stage2.md)。

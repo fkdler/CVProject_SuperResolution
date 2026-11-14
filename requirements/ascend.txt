@@ -1,4 +1,5 @@
 # Use Python and CANN from the verified ModelArts image; do not reinstall them.
+# Cloud only. Never install inference frameworks on the local host.
 # Validate the existing runtime first. This file documents the target dependency.
 mindspore==2.7.2
 numpy>=1.24,<3

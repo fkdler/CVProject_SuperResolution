@@ -1,0 +1,50 @@
+{
+  "mindspore": "2.7.2",
+  "device": "Ascend",
+  "mode": "graph",
+  "jit_level": "O0",
+  "conv_backend": "matmul",
+  "precision_mode": "must_keep_origin_dtype",
+  "hf32": false,
+  "checkpoint_sha256": "146cfca01fd10398fc0ce1e52534b64f76af16dcebcfd9ae03235bcebbbb716b",
+  "branch": "params_ema",
+  "atol": 0.0001,
+  "rtol": 0.0001,
+  "cases": [
+    {
+      "name": "rectangular",
+      "shape": [
+        1,
+        3,
+        32,
+        48
+      ],
+      "seconds_including_compile": 210.5610817298293,
+      "output": {
+        "max_abs": 3.427267074584961e-06,
+        "mean_abs": 4.883883472454423e-07,
+        "rmse": 6.187668718301159e-07,
+        "relative_l2": 9.634275126875182e-07
+      },
+      "passed": true
+    },
+    {
+      "name": "nominal",
+      "shape": [
+        1,
+        3,
+        64,
+        64
+      ],
+      "seconds_including_compile": 165.1978871319443,
+      "output": {
+        "max_abs": 3.427267074584961e-06,
+        "mean_abs": 4.879575499217026e-07,
+        "rmse": 6.173529542542676e-07,
+        "relative_l2": 9.542291810263169e-07
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

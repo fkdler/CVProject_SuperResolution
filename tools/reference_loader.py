@@ -29,6 +29,8 @@ def checked_source(relative_path: str) -> Path:
 
 
 def load_reference():
+    from tools.cloud_guard import require_cloud_workspace
+    require_cloud_workspace()
     import torch
 
     namespace = {

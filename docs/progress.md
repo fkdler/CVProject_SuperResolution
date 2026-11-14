@@ -1,6 +1,30 @@
 # 开发进度
 
-更新：2026-11-14。当前阶段：**第一阶段完成；第二阶段基础模块已开始，待MS运行验证**。
+更新：2026-11-14。当前阶段：**完整MindSpore网络、EMA权重转换及Ascend PYNATIVE/GRAPH O0合成输入对齐已完成；Set14待评测**。
+
+## 本轮更新与执行约束
+
+- 用户明确要求所有模型与数值计算只在云端运行；本地仅源码编辑、纯文本静态检查和文件整理/传输。
+- 不再使用第一阶段的本地参考环境；本轮未安装、导入、运行任何本地推理框架，也未运行本地pytest。
+- 已补齐WindowAttention、SwinTransformerBlock、RDG、Upsample和完整12组DRCT-L。
+- 已补齐DropPath，保留五层宽度/heads/MLP ratio、adjust5无激活、残差0.2及重建slope0.01。
+- slice/concat实现循环移位；动态mask用设备张量生成，construct内不调用NumPy。
+- 已写云端PyTorch参考导出、MindSpore严格转换、序列化回读、完整输出和首个RDG逐层对齐工具。
+- 模型模块、数值工具和pytest收集入口均增加Linux ARM64及work目录检查，防止误在本地执行。
+- 云端执行前固定FP32策略，禁用HF32；PYNATIVE与GRAPH分开验证。
+- PYNATIVE首轮14项测试通过；修复梯度测试内联lambda的GRAPH解析问题后，GRAPH O0的16项测试通过。
+- 官方EMA权重转换覆盖916个参数张量、27,580,719元素；84个几何buffer核对通过，ckpt严格回读通过。
+- 原生Ascend卷积即使禁用HF32仍有首层约3.23e-4偏差，完整输出最大误差约1.20e-3，未通过原门槛。
+- 增加同一OIHW权重与零padding的slice/stack/GEMM等价卷积作为默认，保留native用于诊断。
+  两种输入完整PYNATIVE对齐通过，最大绝对误差3.16e-6/2.92e-6；首个RDG等关键层也通过原门槛。
+- 完整GRAPH O0对齐通过，两种输入最大绝对误差均3.43e-6，未放宽1e-4的原allclose门槛。
+- 转换后ckpt与小型证据已备份本地（只做文件传输，未在本地加载）。本轮没有安装框架或运行训练。
+- 验证窗口约18:02—18:32，约30分钟；标称实例费约10.4元，非实际账单。
+- 本项目验证进程已退出，npu-smi确认无NPU运行进程；Notebook是否停止由用户控制。
+- 已通知用户需要启动已有Notebook并SSH连接；首次计划约30分钟/标称10.41元，不启动训练。
+- 用户通过ModelArts控制台核验了新指纹；使用项目忽略目录内的专用known_hosts恢复严格SSH，未改全局记录。
+- 非交互会话通过加载现有CANN8.5.2环境并保留原PYTHONPATH修复库路径；预置框架与依赖均未安装/升级。
+- 操作顺序、命令与依赖隔离见 [云端操作单](cloud_validation.md)。
 
 ## 已完成
 
@@ -25,10 +49,14 @@
 | DRCT Base 参数 | 14,139,579；6 RDG / 30 Swin | `verification/reference_audit.json` |
 | DRCT-L 参数 | 27,580,719；12 RDG / 60 Swin | 同上 |
 | 官方checkpoint | params/params_ema各1000项；strict load通过，finite，buffer一致 | `verification/checkpoint_audit.json` |
+| Ascend PYNATIVE模块测试 | 初版14项通过 | `verification/ascend_stage2/pytest_pynative.log` |
+| Ascend GRAPH O0模块测试 | 最终16项通过，含等价卷积输出/梯度 | `verification/ascend_stage2/pytest_graph.log` |
+| MindSpore转换 | 916张量/27,580,719元素100%映射，84buffer一致，保存回读通过 | `verification/ascend_stage2/drct_l_x4_params_ema.json` |
+| PYNATIVE完整网络对齐 | 32×48与64×64通过，max_abs≤3.16e-6 | `verification/ascend_stage2/alignment_pynative_matmul.json` |
+| GRAPH O0完整网络对齐 | 同两输入通过，max_abs≤3.43e-6 | `verification/ascend_stage2/alignment_graph_matmul.json` |
 | Python 语法检查 | 通过 | `python -m compileall -q src tools tests` |
-| 本地测试 | 14 passed / 1 module skipped | `verification/local_pytest.txt` |
-| MindSpore 模块运行与梯度 | 未运行，本地缺少 MindSpore | skip 明确记录，不计为通过 |
-| Ascend / GRAPH模式 | 未运行 | 未连接云端 |
+| 第一阶段历史本地测试 | 14 passed / 1 module skipped，本轮未重跑 | `verification/local_pytest.txt` |
+| 第一阶段本地MindSpore测试 | 历史缺少运行时而skip；本轮云端结果见上 | 不将历史skip计为通过 |
 | Set14 PSNR/SSIM | 未运行 | 不将论文29.54当作实测值 |
 
 官方权重SHA-256和原始来源已固定在manifest，主分支选择params_ema。
@@ -46,15 +74,15 @@
 
 ## 下一步
 
-1. 在目标MS 2.7.2环境运行现有基础模块对照测试，记录误差与设备信息。
-2. 按固定源码实现WindowAttention、SwinTransformerBlock、RDG及完整DRCT-L；逐层FP32对齐。
-3. 编写完整转换脚本，训练参数100%映射、buffer逐项核查、strict load与转换哈希报告。
-4. 固定Set14数据来源/清单/哈希，先跑原始PyTorch，再跑MindSpore全图同协议评测。
-5. baseline成功后实现训练smoke，实测step时间/HBM并给出预算方案；长训练待用户批准。
-6. 依据真实瓶颈确定改进和消融；当前不改变baseline模型结构。
+1. 固定Set14数据来源/清单/哈希，完善严格配对、reflect padding/去padding、量化与指标工具。
+2. 先用云端原始PyTorch，再用MindSpore默认等价卷积后端，全图同协议评测。
+3. 实测等价卷积展开窗口的HBM峰值和速度，再决定是否需要单独研究原生卷积精度问题。
+4. baseline成功后实现训练smoke，实测step时间/HBM并给出预算方案；长训练待用户批准。
+5. 依据真实瓶颈确定改进和消融；当前不改变baseline模型结构。
 
 ## 算力与环境
 
-本地：Windows，项目专用Python3.13 CPU PyTorch；MS目标2.7.2未安装/未运行。
+本地：Windows，仅编辑、静态检查与文件整理；第一阶段已有本地参考环境不再使用。
+目标MS2.7.2/Ascend910B4只在云端执行；已由用户授权SSH完成本轮小输入验证。
 未使用其他项目的Conda环境执行本项目实验。云端预算约600元，标称20.828元/小时；
-本阶段无云端操作和训练任务，不对用户已有实例是否持续计费作推断。
+不对用户已有实例当前状态、已产生费用或预算余量作推断。

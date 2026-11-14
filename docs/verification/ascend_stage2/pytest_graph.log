@@ -1,0 +1,21 @@
+................                                                         [100%]
+=============================== warnings summary ===============================
+tests/test_mindspore_primitives.py::test_window_order_and_roundtrip
+  /usr/local/Ascend/cann-8.5.2/python/site-packages/asc_op_compile_base/asc_op_compiler/ascendc_compile_gen_code.py:161: DeprecationWarning: invalid escape sequence '\w'
+    match = re.search(f'{option}=(\w+)', ' '.join(compile_options))
+
+tests/test_mindspore_primitives.py: 384 warnings
+tests/test_mindspore_network.py: 3330 warnings
+  /usr/local/Ascend/cann-8.5.2/python/site-packages/tbe/common/context/op_context.py:38: DeprecationWarning: currentThread() is deprecated, use current_thread() instead
+    return _contexts.setdefault(threading.currentThread().ident, [])
+
+tests/test_mindspore_network.py::test_attention_uniform_values_and_mask
+  /usr/local/Ascend/cann-8.5.2/python/site-packages/tbe/tikcpp/ascendc_compile_gen_code.py:161: DeprecationWarning: invalid escape sequence '\w'
+    match = re.search(f'{option}=(\w+)', ' '.join(compile_options))
+
+tests/test_mindspore_network.py: 24 warnings
+  /usr/local/Ascend/cann-8.5.2/opp/built-in/op_impl/ai_core/tbe/impl/ops_legacy/concat_v2_d.py:117: DeprecationWarning: te.utils.shape_util is expired, please replace it with tbe.common.utils.shape_util
+    shape_input = shape_util.scalar2tensor_one(shape_input)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+16 passed, 3740 warnings in 92.15s (0:01:32)

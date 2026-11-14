@@ -1,0 +1,13 @@
+..............                                                           [100%]
+=============================== warnings summary ===============================
+tests/test_mindspore_primitives.py::test_window_order_and_roundtrip
+  /usr/local/Ascend/cann-8.5.2/python/site-packages/asc_op_compile_base/asc_op_compiler/ascendc_compile_gen_code.py:161: DeprecationWarning: invalid escape sequence '\w'
+    match = re.search(f'{option}=(\w+)', ' '.join(compile_options))
+
+tests/test_mindspore_primitives.py: 20 warnings
+tests/test_mindspore_network.py: 40 warnings
+  /usr/local/Ascend/cann-8.5.2/python/site-packages/tbe/common/context/op_context.py:38: DeprecationWarning: currentThread() is deprecated, use current_thread() instead
+    return _contexts.setdefault(threading.currentThread().ident, [])
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+14 passed, 61 warnings in 44.76s

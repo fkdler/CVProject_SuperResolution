@@ -155,5 +155,7 @@ standalone `inference.py` 使用拼接 flip 的 padding，且已整除仍多补�
 ## 8. 本阶段验证范围
 
 源码分析、CPU 参数/权重审计与几何对照用于锁定迁移基线。
-MindSpore 完整网络、权重转换、Ascend 算子验证、Set14 PSNR/SSIM 尚未完成。
+后续已补齐MindSpore完整网络和严格转换/对齐工具，并在Ascend通过PYNATIVE/GRAPH O0
+两个合成空间尺寸的数值对齐，见[阶段二记录](verification/stage2.md)。
+Set14数据与PSNR/SSIM仍待实际评测。
 后续按 [迁移清单](migration.md) 逐级推进。

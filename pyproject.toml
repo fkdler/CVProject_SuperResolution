@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "drct-mindspore"
 version = "0.1.0"
 description = "Verified, staged MindSpore reproduction of official DRCT-L x4"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = ["numpy>=1.24,<3"]
 
 [tool.setuptools.packages.find]

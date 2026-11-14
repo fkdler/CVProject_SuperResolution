@@ -7,19 +7,19 @@
 
 | PyTorch 模块 | MindSpore 实现 | 核验要点 | 当前状态 |
 |---|---|---|---|
-| window_partition / reverse | reshape + ops.transpose | BHWC 窗口顺序，非方形、多 batch、整数 batch 推导 | 已编写，待 MS 运行 |
-| PatchEmbed / UnEmbed | nn.Cell，展平和转置 | 不做 patch convolution；动态推导 RDG 通道 | 已编写，待 MS 运行 |
-| LayerNorm | nn.LayerNorm，epsilon=1e-5 | 最后通道维；weight→gamma，bias→beta；默认 epsilon 不同 | 已编写入口使用，待 MS 运行 |
-| MLP | Dense + erf GELU + Dropout + Dense | PyTorch 默认精确 GELU；最后两层 ratio=1 | 已编写，待 MS 输出/梯度测试 |
+| window_partition / reverse | reshape + ops.transpose | BHWC 窗口顺序，非方形、多 batch、整数 batch 推导 | Ascend两模式对照通过 |
+| PatchEmbed / UnEmbed | nn.Cell，展平和转置 | 不做 patch convolution；动态推导 RDG 通道 | Ascend两模式对照通过 |
+| LayerNorm | nn.LayerNorm，epsilon=1e-5 | 最后通道维；weight→gamma，bias→beta；默认 epsilon 不同 | Ascend两模式近常量输入对照通过 |
+| MLP | Dense + erf GELU + Dropout + Dense | PyTorch 默认精确 GELU；最后两层 ratio=1 | Ascend两模式输出/输入梯度对照通过 |
 | relative_position_index | NumPy 预计算 → MS Tensor | ij 网格，坐标差方向，展平顺序，int32 | 已编写预计算，CPU 对照测试 |
 | shifted-window mask | NumPy 预计算 → MS Tensor | 0/-100，shift=0，全动态输入尺寸，缓存按 H/W/shift 区分 | 已编写预计算，CPU 对照测试 |
-| WindowAttention | nn.Cell，Dense / matmul / softmax / gather | QKV 排列；scale 先乘 Q；bias 广播；softmax 最后一维 | 待实现 |
-| SwinTransformerBlock | pre-LN、roll、窗口注意力、两次残差 | 0/8 shifts，动态 mask，DropPath eval/train 语义 | 待实现 |
-| RDG | CellList 或具名 Cells + concat + 1×1 Conv | 五层宽度/heads/ratio；最终不激活；残差×0.2 | 待实现 |
-| Conv2d | nn.Conv2d | 必须 has_bias=True，显式 pad_mode='pad'；OIHW 形状审计 | 待实现 |
-| LeakyReLU | nn.LeakyReLU | RDG slope=0.2，重建 slope=0.01 | 待实现 |
-| PixelShuffle | reshape + transpose 的 nn.Cell | PyTorch 通道交错顺序；避免 DCR/CRD 歧义 | 已编写，待 MS 运行 |
-| DRCT-L | 12 RDG + 全局残差 + ×4 重建 | RGB mean、img_range、patch_norm、确切参数量 | 待实现 |
+| WindowAttention | nn.Cell，Dense / matmul / softmax / gather | QKV 排列；scale 先乘 Q；bias 广播；softmax 最后一维 | Ascend人工可解析测试和关键层对齐通过 |
+| SwinTransformerBlock | pre-LN、slice/concat循环移位、窗口注意力、两次残差 | 0/8 shifts，设备动态mask，DropPath eval/train语义 | Ascend mask/梯度/关键层对齐通过 |
+| RDG | 具名Cells + concat + 1×1 Conv | 五层宽度/heads/ratio；最终不激活；残差×0.2 | 首组与末组关键值对齐通过 |
+| Conv2d | 默认MatmulConv2d；保留native诊断 | 原OIHW权重、bias、零padding；slice/stack/GEMM等价实现 | 默认后端完整PYNATIVE对齐通过；GRAPH卷积输出/梯度通过 |
+| LeakyReLU | nn.LeakyReLU | RDG slope=0.2，重建 slope=0.01 | 包含在完整网络对齐通过路径 |
+| PixelShuffle | reshape + transpose 的 nn.Cell | PyTorch 通道交错顺序；避免 DCR/CRD 歧义 | Ascend两模式逐元素对照通过 |
+| DRCT-L | 12 RDG + 全局残差 + ×4 重建 | RGB mean、img_range、patch_norm、确切参数量 | Ascend两输入PYNATIVE/GRAPH O0完整输出对齐通过 |
 | eval 包装器 | reflect pad / unpad / uint8 metrics | 与 standalone inference padding 区分；Y4 与 RGB8 分开 | 已定义协议，待实现 |
 
 预计算 NumPy 只用于常量几何，不作为模型计算后端或 MindSpore 的替代。
@@ -55,9 +55,9 @@ transpose 在 Ascend 不用负轴索引。文档支持某平台不代表项目�
    RMSE、相对 L2；测试包含近常量 LN 输入、负值、非方形、多 batch 和 shifted mask。
 3. Swin / RDG：逐层 hook 对照，避免最终输出掩盖中间排列错误；核验 0.2 与激活位置。
 4. 完整 L：参数名称/形状/数量对齐，随机输入、小幅值和真实 LR 图分别对照。
-   先同平台 CPU（若受支持），再 Ascend，区分框架误差和设备算子误差。
-5. 目标设备在 PYNATIVE 与 GRAPH 模式分别验证。现有测试仅配置 PYNATIVE，
-   GRAPH 模式和动态尺寸图编译尚未覆盖。
+   PyTorch参考只在云端隔离环境，MindSpore目标在Ascend；不执行任何本地模型计算。
+5. 目标设备在PYNATIVE与GRAPH模式分别验证。已提供两种模式入口，尚未运行；
+   两个固定空间尺寸的编译验证也不能代表任意动态shape已支持。
 6. Set14 全图同权重、同 LR/HR、同量化、同协议，保存逐图 PSNR/SSIM。
    在确认偏差来源前，不为“达标”改变模型、数据或协议。
 7. 推理对齐后才做小数据训练 smoke；核验 finite gradients、loss、参数更新、
@@ -69,11 +69,24 @@ transpose 在 Ascend 不用负轴索引。文档支持某平台不代表项目�
 
 ## 4. 本地与云端边界
 
-本地项目专用 CPU PyTorch 环境用于源码审计与参考结果；没有把其他实验的 Conda
-环境作为本项目开发环境。目标 MS 2.7.2 尚未在本地验证。
+用户已更新约束：本地只编辑/静态检查/整理传输文件；不安装或运行推理框架，
+不使用本地CPU/GPU/NPU做数值实验。第一阶段本地环境和结果只作为历史记录，不再调用。
+模型、转换、参考输出和测试均在ModelArts完成，执行入口有云端目录与平台保护。
 云端仅在算子、推理或训练需要时使用，先核对 Conda/Python/MS/CANN/NPU；
 保留预置环境，将项目和产物放入 `/home/ma-user/work`，不创建新付费实例。
 预算约 600 元，对应标称约 28.8 小时实例费用，实际还需扣除已有运行、数据盘及其他费用。
 这是预算算术，不是可承诺的训练时长。
 
 昂贵训练必须先实测，给出总耗时和费用，等待批准。当前阶段没有运行云端任务。
+
+## 5. 当前可运行入口（仅云端，尚待实际执行）
+
+`tools.export_reference_bundle`在云端独立PyTorch环境导出官方state和中间值；
+`tools.convert_checkpoint`在预置MindSpore环境完成100%参数/确定性buffer核查与保存回读；
+`tools.verify_alignment`比较完整输出，PYNATIVE可额外追踪首组五层Swin与主干节点。
+检查点分支、源哈希、中间包哈希、输出ckpt哈希和误差均进入报告。
+具体命令及首次执行预算见 [云端操作单](cloud_validation.md)。
+
+当前权重初始化以预训练加载为前提；尚未复现官方从零训练的初始化分布和随机数流。
+完整模型位于`src/drct_ms/models/drct.py`；已有Ascend执行证据，以进度和阶段记录中的
+具体模式、后端、输入与误差为准，不能推广为Set14指标或任意动态shape已通过。

@@ -1,5 +1,5 @@
 {
-  "status": "architecture specification; full MindSpore network not yet implemented",
+  "status": "full MindSpore graph and converted EMA weights validated on Ascend with two synthetic inputs in PYNATIVE and GRAPH O0; Set14 pending",
   "upstream_commit": "c0a8b51e69241cf7f8ae598053235ff498517935",
   "upstream_config": "options/test/DRCT-L_SRx4_ImageNet-pretrain.yml",
   "network_g": {
@@ -22,6 +22,12 @@
     "patch_norm": true,
     "upsampler": "pixelshuffle",
     "resi_connection": "1conv"
+  },
+  "execution": {
+    "conv_backend": "matmul",
+    "precision_mode": "must_keep_origin_dtype",
+    "allow_hf32": false,
+    "graph_jit_level": "O0"
   },
   "evaluation": {
     "primary": "released_basicsr_yaml",

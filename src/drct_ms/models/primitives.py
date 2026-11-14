@@ -1,8 +1,8 @@
 """Initial real MindSpore Cells; target runtime is MindSpore 2.7.2.
 
 Derived from ming053l/DRCT, MIT, Copyright (c) 2024 Chia-Ming Lee.
-See THIRD_PARTY_NOTICES.md. Runtime equivalence is tested only when MindSpore
-is available; these Cells are not a completed DRCT-L network.
+See THIRD_PARTY_NOTICES.md. Full network is in drct.py; runtime equivalence
+requires the target cloud MindSpore environment.
 """
 
 import math
@@ -29,6 +29,15 @@ def window_reverse(windows, window_size: int, height: int, width: int):
     c = windows.shape[-1]
     x = windows.reshape((b, height // window_size, width // window_size, window_size, window_size, c))
     return ops.transpose(x, (0, 1, 3, 2, 4, 5)).reshape((b, height, width, c))
+
+
+def cyclic_shift_bhwc(x, shift_h: int, shift_w: int):
+    """Equivalent to torch.roll on BHWC spatial axes using slice/concat only."""
+    if shift_h:
+        x = ops.concat((x[:, -shift_h:, :, :], x[:, :-shift_h, :, :]), axis=1)
+    if shift_w:
+        x = ops.concat((x[:, :, -shift_w:, :], x[:, :, :-shift_w, :]), axis=2)
+    return x
 
 
 class PatchEmbed(nn.Cell):

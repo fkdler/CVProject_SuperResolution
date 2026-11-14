@@ -17,7 +17,6 @@ pytestmark = pytest.mark.mindspore
 def golden():
     # Device is configured by the caller/environment; never silently switch Ascend to CPU.
     assert ms.__version__ == "2.7.2", f"Target runtime is MindSpore 2.7.2, got {ms.__version__}"
-    ms.set_context(mode=ms.PYNATIVE_MODE)
     path = Path(__file__).parent / "fixtures/primitive_reference.npz"
     metadata = json.loads(path.with_suffix(".json").read_text(encoding="utf-8"))
     assert hashlib.sha256(path.read_bytes()).hexdigest() == metadata["artifact_sha256"]
@@ -57,5 +56,7 @@ def test_mlp_shared_weights_and_input_gradients(golden):
             getattr(getattr(net, layer), field).set_data(ms.Tensor(golden[f"mlp_{layer}.{field}"]))
     x = ms.Tensor(golden["mlp_x"])
     np.testing.assert_allclose(net(x).asnumpy(), golden["mlp_y"], atol=2e-6, rtol=2e-5)
-    gradient = ms.grad(lambda a: net(a).sum())(x).asnumpy()
+    def loss(a):
+        return net(a).sum()
+    gradient = ms.grad(loss)(x).asnumpy()
     np.testing.assert_allclose(gradient, golden["mlp_input_grad"], atol=3e-6, rtol=3e-5)
