@@ -1,0 +1,35 @@
+{
+  "status": "architecture specification; full MindSpore network not yet implemented",
+  "upstream_commit": "c0a8b51e69241cf7f8ae598053235ff498517935",
+  "upstream_config": "options/test/DRCT-L_SRx4_ImageNet-pretrain.yml",
+  "network_g": {
+    "upscale": 4,
+    "in_chans": 3,
+    "img_size": 64,
+    "patch_size": 1,
+    "window_size": 16,
+    "img_range": 1.0,
+    "depths": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+    "embed_dim": 180,
+    "num_heads": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+    "gc": 32,
+    "mlp_ratio": 2,
+    "qkv_bias": true,
+    "drop_rate": 0.0,
+    "attn_drop_rate": 0.0,
+    "drop_path_rate": 0.1,
+    "ape": false,
+    "patch_norm": true,
+    "upsampler": "pixelshuffle",
+    "resi_connection": "1conv"
+  },
+  "evaluation": {
+    "primary": "released_basicsr_yaml",
+    "released_basicsr_yaml": {"channel": "BT.601 Y", "crop_border_hr": 4, "quantize_uint8": true},
+    "paper_v5_text_diagnostic": {"channel": "RGB", "crop_border_hr": 8, "quantize_uint8": true},
+    "input": "RGB NCHW float32 [0,1]",
+    "padding": "right/bottom reflect to multiples of 16; remove padding after 4x SR",
+    "self_ensemble": false,
+    "tile": false
+  }
+}

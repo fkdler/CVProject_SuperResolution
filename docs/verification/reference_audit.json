@@ -1,0 +1,5547 @@
+{
+  "python": "3.13.14",
+  "torch": "2.15.0+cpu",
+  "device": "CPU",
+  "models": {
+    "base": {
+      "config": "reference/DRCT/options/test/DRCT_SRx4.yml",
+      "config_sha256_lf": "066ec92431d8d0c5b9bc8b3049cf94e63baa052bc3f37124c8846ccdf8f0d6f0",
+      "parameters": 14139579,
+      "state_dict_entries": 508,
+      "rdg_count": 6,
+      "swin_count": 30,
+      "group_channels": [
+        180,
+        212,
+        244,
+        276,
+        308
+      ],
+      "group_heads": [
+        6,
+        4,
+        2,
+        6,
+        4
+      ],
+      "group_shifts": [
+        0,
+        8,
+        0,
+        8,
+        0
+      ],
+      "group_mlp_ratios": [
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "drop_path_per_group": [
+        0.0,
+        0.017142856493592262,
+        0.034285712987184525,
+        0.051428575068712234,
+        0.06857143342494965,
+        0.08571428805589676
+      ],
+      "state_dict": {
+        "conv_first.weight": [
+          180,
+          3,
+          3,
+          3
+        ],
+        "conv_first.bias": [
+          180
+        ],
+        "patch_embed.norm.weight": [
+          180
+        ],
+        "patch_embed.norm.bias": [
+          180
+        ],
+        "layers.0.swin1.norm1.weight": [
+          180
+        ],
+        "layers.0.swin1.norm1.bias": [
+          180
+        ],
+        "layers.0.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.0.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.0.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.0.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.0.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.0.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.0.swin1.norm2.weight": [
+          180
+        ],
+        "layers.0.swin1.norm2.bias": [
+          180
+        ],
+        "layers.0.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.0.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.0.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.0.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.0.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.0.adjust1.bias": [
+          32
+        ],
+        "layers.0.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.0.swin2.norm1.weight": [
+          212
+        ],
+        "layers.0.swin2.norm1.bias": [
+          212
+        ],
+        "layers.0.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.0.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.0.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.0.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.0.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.0.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.0.swin2.norm2.weight": [
+          212
+        ],
+        "layers.0.swin2.norm2.bias": [
+          212
+        ],
+        "layers.0.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.0.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.0.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.0.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.0.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.0.adjust2.bias": [
+          32
+        ],
+        "layers.0.swin3.norm1.weight": [
+          244
+        ],
+        "layers.0.swin3.norm1.bias": [
+          244
+        ],
+        "layers.0.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.0.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.0.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.0.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.0.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.0.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.0.swin3.norm2.weight": [
+          244
+        ],
+        "layers.0.swin3.norm2.bias": [
+          244
+        ],
+        "layers.0.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.0.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.0.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.0.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.0.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.0.adjust3.bias": [
+          32
+        ],
+        "layers.0.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.0.swin4.norm1.weight": [
+          276
+        ],
+        "layers.0.swin4.norm1.bias": [
+          276
+        ],
+        "layers.0.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.0.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.0.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.0.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.0.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.0.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.0.swin4.norm2.weight": [
+          276
+        ],
+        "layers.0.swin4.norm2.bias": [
+          276
+        ],
+        "layers.0.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.0.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.0.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.0.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.0.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.0.adjust4.bias": [
+          32
+        ],
+        "layers.0.swin5.norm1.weight": [
+          308
+        ],
+        "layers.0.swin5.norm1.bias": [
+          308
+        ],
+        "layers.0.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.0.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.0.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.0.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.0.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.0.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.0.swin5.norm2.weight": [
+          308
+        ],
+        "layers.0.swin5.norm2.bias": [
+          308
+        ],
+        "layers.0.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.0.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.0.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.0.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.0.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.0.adjust5.bias": [
+          180
+        ],
+        "layers.1.swin1.norm1.weight": [
+          180
+        ],
+        "layers.1.swin1.norm1.bias": [
+          180
+        ],
+        "layers.1.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.1.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.1.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.1.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.1.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.1.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.1.swin1.norm2.weight": [
+          180
+        ],
+        "layers.1.swin1.norm2.bias": [
+          180
+        ],
+        "layers.1.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.1.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.1.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.1.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.1.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.1.adjust1.bias": [
+          32
+        ],
+        "layers.1.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.1.swin2.norm1.weight": [
+          212
+        ],
+        "layers.1.swin2.norm1.bias": [
+          212
+        ],
+        "layers.1.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.1.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.1.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.1.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.1.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.1.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.1.swin2.norm2.weight": [
+          212
+        ],
+        "layers.1.swin2.norm2.bias": [
+          212
+        ],
+        "layers.1.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.1.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.1.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.1.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.1.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.1.adjust2.bias": [
+          32
+        ],
+        "layers.1.swin3.norm1.weight": [
+          244
+        ],
+        "layers.1.swin3.norm1.bias": [
+          244
+        ],
+        "layers.1.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.1.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.1.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.1.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.1.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.1.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.1.swin3.norm2.weight": [
+          244
+        ],
+        "layers.1.swin3.norm2.bias": [
+          244
+        ],
+        "layers.1.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.1.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.1.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.1.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.1.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.1.adjust3.bias": [
+          32
+        ],
+        "layers.1.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.1.swin4.norm1.weight": [
+          276
+        ],
+        "layers.1.swin4.norm1.bias": [
+          276
+        ],
+        "layers.1.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.1.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.1.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.1.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.1.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.1.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.1.swin4.norm2.weight": [
+          276
+        ],
+        "layers.1.swin4.norm2.bias": [
+          276
+        ],
+        "layers.1.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.1.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.1.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.1.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.1.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.1.adjust4.bias": [
+          32
+        ],
+        "layers.1.swin5.norm1.weight": [
+          308
+        ],
+        "layers.1.swin5.norm1.bias": [
+          308
+        ],
+        "layers.1.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.1.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.1.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.1.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.1.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.1.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.1.swin5.norm2.weight": [
+          308
+        ],
+        "layers.1.swin5.norm2.bias": [
+          308
+        ],
+        "layers.1.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.1.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.1.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.1.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.1.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.1.adjust5.bias": [
+          180
+        ],
+        "layers.2.swin1.norm1.weight": [
+          180
+        ],
+        "layers.2.swin1.norm1.bias": [
+          180
+        ],
+        "layers.2.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.2.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.2.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.2.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.2.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.2.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.2.swin1.norm2.weight": [
+          180
+        ],
+        "layers.2.swin1.norm2.bias": [
+          180
+        ],
+        "layers.2.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.2.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.2.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.2.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.2.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.2.adjust1.bias": [
+          32
+        ],
+        "layers.2.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.2.swin2.norm1.weight": [
+          212
+        ],
+        "layers.2.swin2.norm1.bias": [
+          212
+        ],
+        "layers.2.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.2.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.2.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.2.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.2.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.2.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.2.swin2.norm2.weight": [
+          212
+        ],
+        "layers.2.swin2.norm2.bias": [
+          212
+        ],
+        "layers.2.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.2.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.2.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.2.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.2.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.2.adjust2.bias": [
+          32
+        ],
+        "layers.2.swin3.norm1.weight": [
+          244
+        ],
+        "layers.2.swin3.norm1.bias": [
+          244
+        ],
+        "layers.2.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.2.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.2.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.2.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.2.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.2.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.2.swin3.norm2.weight": [
+          244
+        ],
+        "layers.2.swin3.norm2.bias": [
+          244
+        ],
+        "layers.2.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.2.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.2.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.2.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.2.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.2.adjust3.bias": [
+          32
+        ],
+        "layers.2.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.2.swin4.norm1.weight": [
+          276
+        ],
+        "layers.2.swin4.norm1.bias": [
+          276
+        ],
+        "layers.2.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.2.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.2.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.2.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.2.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.2.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.2.swin4.norm2.weight": [
+          276
+        ],
+        "layers.2.swin4.norm2.bias": [
+          276
+        ],
+        "layers.2.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.2.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.2.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.2.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.2.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.2.adjust4.bias": [
+          32
+        ],
+        "layers.2.swin5.norm1.weight": [
+          308
+        ],
+        "layers.2.swin5.norm1.bias": [
+          308
+        ],
+        "layers.2.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.2.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.2.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.2.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.2.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.2.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.2.swin5.norm2.weight": [
+          308
+        ],
+        "layers.2.swin5.norm2.bias": [
+          308
+        ],
+        "layers.2.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.2.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.2.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.2.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.2.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.2.adjust5.bias": [
+          180
+        ],
+        "layers.3.swin1.norm1.weight": [
+          180
+        ],
+        "layers.3.swin1.norm1.bias": [
+          180
+        ],
+        "layers.3.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.3.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.3.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.3.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.3.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.3.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.3.swin1.norm2.weight": [
+          180
+        ],
+        "layers.3.swin1.norm2.bias": [
+          180
+        ],
+        "layers.3.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.3.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.3.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.3.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.3.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.3.adjust1.bias": [
+          32
+        ],
+        "layers.3.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.3.swin2.norm1.weight": [
+          212
+        ],
+        "layers.3.swin2.norm1.bias": [
+          212
+        ],
+        "layers.3.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.3.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.3.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.3.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.3.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.3.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.3.swin2.norm2.weight": [
+          212
+        ],
+        "layers.3.swin2.norm2.bias": [
+          212
+        ],
+        "layers.3.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.3.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.3.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.3.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.3.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.3.adjust2.bias": [
+          32
+        ],
+        "layers.3.swin3.norm1.weight": [
+          244
+        ],
+        "layers.3.swin3.norm1.bias": [
+          244
+        ],
+        "layers.3.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.3.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.3.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.3.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.3.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.3.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.3.swin3.norm2.weight": [
+          244
+        ],
+        "layers.3.swin3.norm2.bias": [
+          244
+        ],
+        "layers.3.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.3.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.3.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.3.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.3.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.3.adjust3.bias": [
+          32
+        ],
+        "layers.3.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.3.swin4.norm1.weight": [
+          276
+        ],
+        "layers.3.swin4.norm1.bias": [
+          276
+        ],
+        "layers.3.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.3.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.3.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.3.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.3.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.3.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.3.swin4.norm2.weight": [
+          276
+        ],
+        "layers.3.swin4.norm2.bias": [
+          276
+        ],
+        "layers.3.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.3.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.3.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.3.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.3.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.3.adjust4.bias": [
+          32
+        ],
+        "layers.3.swin5.norm1.weight": [
+          308
+        ],
+        "layers.3.swin5.norm1.bias": [
+          308
+        ],
+        "layers.3.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.3.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.3.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.3.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.3.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.3.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.3.swin5.norm2.weight": [
+          308
+        ],
+        "layers.3.swin5.norm2.bias": [
+          308
+        ],
+        "layers.3.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.3.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.3.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.3.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.3.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.3.adjust5.bias": [
+          180
+        ],
+        "layers.4.swin1.norm1.weight": [
+          180
+        ],
+        "layers.4.swin1.norm1.bias": [
+          180
+        ],
+        "layers.4.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.4.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.4.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.4.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.4.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.4.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.4.swin1.norm2.weight": [
+          180
+        ],
+        "layers.4.swin1.norm2.bias": [
+          180
+        ],
+        "layers.4.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.4.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.4.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.4.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.4.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.4.adjust1.bias": [
+          32
+        ],
+        "layers.4.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.4.swin2.norm1.weight": [
+          212
+        ],
+        "layers.4.swin2.norm1.bias": [
+          212
+        ],
+        "layers.4.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.4.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.4.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.4.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.4.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.4.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.4.swin2.norm2.weight": [
+          212
+        ],
+        "layers.4.swin2.norm2.bias": [
+          212
+        ],
+        "layers.4.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.4.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.4.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.4.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.4.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.4.adjust2.bias": [
+          32
+        ],
+        "layers.4.swin3.norm1.weight": [
+          244
+        ],
+        "layers.4.swin3.norm1.bias": [
+          244
+        ],
+        "layers.4.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.4.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.4.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.4.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.4.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.4.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.4.swin3.norm2.weight": [
+          244
+        ],
+        "layers.4.swin3.norm2.bias": [
+          244
+        ],
+        "layers.4.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.4.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.4.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.4.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.4.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.4.adjust3.bias": [
+          32
+        ],
+        "layers.4.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.4.swin4.norm1.weight": [
+          276
+        ],
+        "layers.4.swin4.norm1.bias": [
+          276
+        ],
+        "layers.4.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.4.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.4.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.4.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.4.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.4.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.4.swin4.norm2.weight": [
+          276
+        ],
+        "layers.4.swin4.norm2.bias": [
+          276
+        ],
+        "layers.4.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.4.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.4.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.4.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.4.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.4.adjust4.bias": [
+          32
+        ],
+        "layers.4.swin5.norm1.weight": [
+          308
+        ],
+        "layers.4.swin5.norm1.bias": [
+          308
+        ],
+        "layers.4.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.4.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.4.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.4.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.4.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.4.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.4.swin5.norm2.weight": [
+          308
+        ],
+        "layers.4.swin5.norm2.bias": [
+          308
+        ],
+        "layers.4.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.4.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.4.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.4.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.4.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.4.adjust5.bias": [
+          180
+        ],
+        "layers.5.swin1.norm1.weight": [
+          180
+        ],
+        "layers.5.swin1.norm1.bias": [
+          180
+        ],
+        "layers.5.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.5.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.5.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.5.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.5.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.5.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.5.swin1.norm2.weight": [
+          180
+        ],
+        "layers.5.swin1.norm2.bias": [
+          180
+        ],
+        "layers.5.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.5.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.5.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.5.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.5.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.5.adjust1.bias": [
+          32
+        ],
+        "layers.5.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.5.swin2.norm1.weight": [
+          212
+        ],
+        "layers.5.swin2.norm1.bias": [
+          212
+        ],
+        "layers.5.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.5.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.5.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.5.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.5.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.5.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.5.swin2.norm2.weight": [
+          212
+        ],
+        "layers.5.swin2.norm2.bias": [
+          212
+        ],
+        "layers.5.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.5.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.5.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.5.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.5.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.5.adjust2.bias": [
+          32
+        ],
+        "layers.5.swin3.norm1.weight": [
+          244
+        ],
+        "layers.5.swin3.norm1.bias": [
+          244
+        ],
+        "layers.5.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.5.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.5.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.5.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.5.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.5.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.5.swin3.norm2.weight": [
+          244
+        ],
+        "layers.5.swin3.norm2.bias": [
+          244
+        ],
+        "layers.5.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.5.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.5.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.5.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.5.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.5.adjust3.bias": [
+          32
+        ],
+        "layers.5.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.5.swin4.norm1.weight": [
+          276
+        ],
+        "layers.5.swin4.norm1.bias": [
+          276
+        ],
+        "layers.5.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.5.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.5.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.5.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.5.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.5.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.5.swin4.norm2.weight": [
+          276
+        ],
+        "layers.5.swin4.norm2.bias": [
+          276
+        ],
+        "layers.5.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.5.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.5.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.5.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.5.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.5.adjust4.bias": [
+          32
+        ],
+        "layers.5.swin5.norm1.weight": [
+          308
+        ],
+        "layers.5.swin5.norm1.bias": [
+          308
+        ],
+        "layers.5.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.5.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.5.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.5.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.5.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.5.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.5.swin5.norm2.weight": [
+          308
+        ],
+        "layers.5.swin5.norm2.bias": [
+          308
+        ],
+        "layers.5.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.5.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.5.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.5.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.5.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.5.adjust5.bias": [
+          180
+        ],
+        "norm.weight": [
+          180
+        ],
+        "norm.bias": [
+          180
+        ],
+        "conv_after_body.weight": [
+          180,
+          180,
+          3,
+          3
+        ],
+        "conv_after_body.bias": [
+          180
+        ],
+        "conv_before_upsample.0.weight": [
+          64,
+          180,
+          3,
+          3
+        ],
+        "conv_before_upsample.0.bias": [
+          64
+        ],
+        "upsample.0.weight": [
+          256,
+          64,
+          3,
+          3
+        ],
+        "upsample.0.bias": [
+          256
+        ],
+        "upsample.2.weight": [
+          256,
+          64,
+          3,
+          3
+        ],
+        "upsample.2.bias": [
+          256
+        ],
+        "conv_last.weight": [
+          3,
+          64,
+          3,
+          3
+        ],
+        "conv_last.bias": [
+          3
+        ]
+      }
+    },
+    "large": {
+      "config": "reference/DRCT/options/test/DRCT-L_SRx4_ImageNet-pretrain.yml",
+      "config_sha256_lf": "c07870ea2c15056177dc5adc4dfabf892303bb0cde39ea76c358fec269304c6d",
+      "parameters": 27580719,
+      "state_dict_entries": 1000,
+      "rdg_count": 12,
+      "swin_count": 60,
+      "group_channels": [
+        180,
+        212,
+        244,
+        276,
+        308
+      ],
+      "group_heads": [
+        6,
+        4,
+        2,
+        6,
+        4
+      ],
+      "group_shifts": [
+        0,
+        8,
+        0,
+        8,
+        0
+      ],
+      "group_mlp_ratios": [
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "drop_path_per_group": [
+        0.0,
+        0.008450704626739025,
+        0.01690140925347805,
+        0.0253521129488945,
+        0.0338028185069561,
+        0.0422535240650177,
+        0.050704225897789,
+        0.0591549277305603,
+        0.0676056295633316,
+        0.0760563388466835,
+        0.0845070406794548,
+        0.0929577499628067
+      ],
+      "state_dict": {
+        "conv_first.weight": [
+          180,
+          3,
+          3,
+          3
+        ],
+        "conv_first.bias": [
+          180
+        ],
+        "patch_embed.norm.weight": [
+          180
+        ],
+        "patch_embed.norm.bias": [
+          180
+        ],
+        "layers.0.swin1.norm1.weight": [
+          180
+        ],
+        "layers.0.swin1.norm1.bias": [
+          180
+        ],
+        "layers.0.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.0.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.0.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.0.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.0.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.0.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.0.swin1.norm2.weight": [
+          180
+        ],
+        "layers.0.swin1.norm2.bias": [
+          180
+        ],
+        "layers.0.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.0.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.0.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.0.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.0.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.0.adjust1.bias": [
+          32
+        ],
+        "layers.0.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.0.swin2.norm1.weight": [
+          212
+        ],
+        "layers.0.swin2.norm1.bias": [
+          212
+        ],
+        "layers.0.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.0.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.0.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.0.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.0.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.0.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.0.swin2.norm2.weight": [
+          212
+        ],
+        "layers.0.swin2.norm2.bias": [
+          212
+        ],
+        "layers.0.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.0.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.0.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.0.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.0.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.0.adjust2.bias": [
+          32
+        ],
+        "layers.0.swin3.norm1.weight": [
+          244
+        ],
+        "layers.0.swin3.norm1.bias": [
+          244
+        ],
+        "layers.0.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.0.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.0.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.0.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.0.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.0.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.0.swin3.norm2.weight": [
+          244
+        ],
+        "layers.0.swin3.norm2.bias": [
+          244
+        ],
+        "layers.0.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.0.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.0.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.0.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.0.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.0.adjust3.bias": [
+          32
+        ],
+        "layers.0.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.0.swin4.norm1.weight": [
+          276
+        ],
+        "layers.0.swin4.norm1.bias": [
+          276
+        ],
+        "layers.0.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.0.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.0.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.0.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.0.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.0.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.0.swin4.norm2.weight": [
+          276
+        ],
+        "layers.0.swin4.norm2.bias": [
+          276
+        ],
+        "layers.0.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.0.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.0.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.0.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.0.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.0.adjust4.bias": [
+          32
+        ],
+        "layers.0.swin5.norm1.weight": [
+          308
+        ],
+        "layers.0.swin5.norm1.bias": [
+          308
+        ],
+        "layers.0.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.0.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.0.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.0.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.0.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.0.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.0.swin5.norm2.weight": [
+          308
+        ],
+        "layers.0.swin5.norm2.bias": [
+          308
+        ],
+        "layers.0.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.0.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.0.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.0.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.0.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.0.adjust5.bias": [
+          180
+        ],
+        "layers.1.swin1.norm1.weight": [
+          180
+        ],
+        "layers.1.swin1.norm1.bias": [
+          180
+        ],
+        "layers.1.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.1.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.1.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.1.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.1.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.1.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.1.swin1.norm2.weight": [
+          180
+        ],
+        "layers.1.swin1.norm2.bias": [
+          180
+        ],
+        "layers.1.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.1.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.1.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.1.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.1.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.1.adjust1.bias": [
+          32
+        ],
+        "layers.1.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.1.swin2.norm1.weight": [
+          212
+        ],
+        "layers.1.swin2.norm1.bias": [
+          212
+        ],
+        "layers.1.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.1.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.1.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.1.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.1.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.1.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.1.swin2.norm2.weight": [
+          212
+        ],
+        "layers.1.swin2.norm2.bias": [
+          212
+        ],
+        "layers.1.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.1.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.1.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.1.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.1.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.1.adjust2.bias": [
+          32
+        ],
+        "layers.1.swin3.norm1.weight": [
+          244
+        ],
+        "layers.1.swin3.norm1.bias": [
+          244
+        ],
+        "layers.1.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.1.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.1.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.1.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.1.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.1.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.1.swin3.norm2.weight": [
+          244
+        ],
+        "layers.1.swin3.norm2.bias": [
+          244
+        ],
+        "layers.1.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.1.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.1.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.1.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.1.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.1.adjust3.bias": [
+          32
+        ],
+        "layers.1.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.1.swin4.norm1.weight": [
+          276
+        ],
+        "layers.1.swin4.norm1.bias": [
+          276
+        ],
+        "layers.1.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.1.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.1.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.1.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.1.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.1.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.1.swin4.norm2.weight": [
+          276
+        ],
+        "layers.1.swin4.norm2.bias": [
+          276
+        ],
+        "layers.1.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.1.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.1.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.1.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.1.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.1.adjust4.bias": [
+          32
+        ],
+        "layers.1.swin5.norm1.weight": [
+          308
+        ],
+        "layers.1.swin5.norm1.bias": [
+          308
+        ],
+        "layers.1.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.1.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.1.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.1.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.1.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.1.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.1.swin5.norm2.weight": [
+          308
+        ],
+        "layers.1.swin5.norm2.bias": [
+          308
+        ],
+        "layers.1.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.1.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.1.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.1.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.1.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.1.adjust5.bias": [
+          180
+        ],
+        "layers.2.swin1.norm1.weight": [
+          180
+        ],
+        "layers.2.swin1.norm1.bias": [
+          180
+        ],
+        "layers.2.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.2.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.2.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.2.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.2.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.2.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.2.swin1.norm2.weight": [
+          180
+        ],
+        "layers.2.swin1.norm2.bias": [
+          180
+        ],
+        "layers.2.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.2.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.2.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.2.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.2.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.2.adjust1.bias": [
+          32
+        ],
+        "layers.2.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.2.swin2.norm1.weight": [
+          212
+        ],
+        "layers.2.swin2.norm1.bias": [
+          212
+        ],
+        "layers.2.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.2.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.2.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.2.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.2.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.2.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.2.swin2.norm2.weight": [
+          212
+        ],
+        "layers.2.swin2.norm2.bias": [
+          212
+        ],
+        "layers.2.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.2.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.2.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.2.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.2.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.2.adjust2.bias": [
+          32
+        ],
+        "layers.2.swin3.norm1.weight": [
+          244
+        ],
+        "layers.2.swin3.norm1.bias": [
+          244
+        ],
+        "layers.2.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.2.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.2.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.2.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.2.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.2.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.2.swin3.norm2.weight": [
+          244
+        ],
+        "layers.2.swin3.norm2.bias": [
+          244
+        ],
+        "layers.2.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.2.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.2.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.2.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.2.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.2.adjust3.bias": [
+          32
+        ],
+        "layers.2.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.2.swin4.norm1.weight": [
+          276
+        ],
+        "layers.2.swin4.norm1.bias": [
+          276
+        ],
+        "layers.2.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.2.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.2.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.2.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.2.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.2.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.2.swin4.norm2.weight": [
+          276
+        ],
+        "layers.2.swin4.norm2.bias": [
+          276
+        ],
+        "layers.2.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.2.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.2.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.2.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.2.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.2.adjust4.bias": [
+          32
+        ],
+        "layers.2.swin5.norm1.weight": [
+          308
+        ],
+        "layers.2.swin5.norm1.bias": [
+          308
+        ],
+        "layers.2.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.2.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.2.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.2.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.2.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.2.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.2.swin5.norm2.weight": [
+          308
+        ],
+        "layers.2.swin5.norm2.bias": [
+          308
+        ],
+        "layers.2.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.2.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.2.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.2.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.2.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.2.adjust5.bias": [
+          180
+        ],
+        "layers.3.swin1.norm1.weight": [
+          180
+        ],
+        "layers.3.swin1.norm1.bias": [
+          180
+        ],
+        "layers.3.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.3.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.3.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.3.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.3.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.3.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.3.swin1.norm2.weight": [
+          180
+        ],
+        "layers.3.swin1.norm2.bias": [
+          180
+        ],
+        "layers.3.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.3.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.3.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.3.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.3.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.3.adjust1.bias": [
+          32
+        ],
+        "layers.3.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.3.swin2.norm1.weight": [
+          212
+        ],
+        "layers.3.swin2.norm1.bias": [
+          212
+        ],
+        "layers.3.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.3.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.3.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.3.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.3.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.3.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.3.swin2.norm2.weight": [
+          212
+        ],
+        "layers.3.swin2.norm2.bias": [
+          212
+        ],
+        "layers.3.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.3.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.3.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.3.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.3.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.3.adjust2.bias": [
+          32
+        ],
+        "layers.3.swin3.norm1.weight": [
+          244
+        ],
+        "layers.3.swin3.norm1.bias": [
+          244
+        ],
+        "layers.3.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.3.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.3.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.3.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.3.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.3.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.3.swin3.norm2.weight": [
+          244
+        ],
+        "layers.3.swin3.norm2.bias": [
+          244
+        ],
+        "layers.3.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.3.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.3.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.3.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.3.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.3.adjust3.bias": [
+          32
+        ],
+        "layers.3.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.3.swin4.norm1.weight": [
+          276
+        ],
+        "layers.3.swin4.norm1.bias": [
+          276
+        ],
+        "layers.3.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.3.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.3.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.3.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.3.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.3.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.3.swin4.norm2.weight": [
+          276
+        ],
+        "layers.3.swin4.norm2.bias": [
+          276
+        ],
+        "layers.3.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.3.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.3.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.3.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.3.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.3.adjust4.bias": [
+          32
+        ],
+        "layers.3.swin5.norm1.weight": [
+          308
+        ],
+        "layers.3.swin5.norm1.bias": [
+          308
+        ],
+        "layers.3.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.3.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.3.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.3.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.3.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.3.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.3.swin5.norm2.weight": [
+          308
+        ],
+        "layers.3.swin5.norm2.bias": [
+          308
+        ],
+        "layers.3.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.3.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.3.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.3.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.3.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.3.adjust5.bias": [
+          180
+        ],
+        "layers.4.swin1.norm1.weight": [
+          180
+        ],
+        "layers.4.swin1.norm1.bias": [
+          180
+        ],
+        "layers.4.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.4.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.4.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.4.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.4.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.4.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.4.swin1.norm2.weight": [
+          180
+        ],
+        "layers.4.swin1.norm2.bias": [
+          180
+        ],
+        "layers.4.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.4.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.4.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.4.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.4.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.4.adjust1.bias": [
+          32
+        ],
+        "layers.4.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.4.swin2.norm1.weight": [
+          212
+        ],
+        "layers.4.swin2.norm1.bias": [
+          212
+        ],
+        "layers.4.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.4.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.4.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.4.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.4.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.4.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.4.swin2.norm2.weight": [
+          212
+        ],
+        "layers.4.swin2.norm2.bias": [
+          212
+        ],
+        "layers.4.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.4.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.4.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.4.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.4.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.4.adjust2.bias": [
+          32
+        ],
+        "layers.4.swin3.norm1.weight": [
+          244
+        ],
+        "layers.4.swin3.norm1.bias": [
+          244
+        ],
+        "layers.4.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.4.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.4.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.4.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.4.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.4.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.4.swin3.norm2.weight": [
+          244
+        ],
+        "layers.4.swin3.norm2.bias": [
+          244
+        ],
+        "layers.4.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.4.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.4.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.4.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.4.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.4.adjust3.bias": [
+          32
+        ],
+        "layers.4.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.4.swin4.norm1.weight": [
+          276
+        ],
+        "layers.4.swin4.norm1.bias": [
+          276
+        ],
+        "layers.4.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.4.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.4.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.4.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.4.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.4.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.4.swin4.norm2.weight": [
+          276
+        ],
+        "layers.4.swin4.norm2.bias": [
+          276
+        ],
+        "layers.4.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.4.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.4.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.4.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.4.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.4.adjust4.bias": [
+          32
+        ],
+        "layers.4.swin5.norm1.weight": [
+          308
+        ],
+        "layers.4.swin5.norm1.bias": [
+          308
+        ],
+        "layers.4.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.4.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.4.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.4.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.4.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.4.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.4.swin5.norm2.weight": [
+          308
+        ],
+        "layers.4.swin5.norm2.bias": [
+          308
+        ],
+        "layers.4.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.4.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.4.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.4.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.4.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.4.adjust5.bias": [
+          180
+        ],
+        "layers.5.swin1.norm1.weight": [
+          180
+        ],
+        "layers.5.swin1.norm1.bias": [
+          180
+        ],
+        "layers.5.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.5.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.5.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.5.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.5.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.5.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.5.swin1.norm2.weight": [
+          180
+        ],
+        "layers.5.swin1.norm2.bias": [
+          180
+        ],
+        "layers.5.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.5.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.5.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.5.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.5.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.5.adjust1.bias": [
+          32
+        ],
+        "layers.5.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.5.swin2.norm1.weight": [
+          212
+        ],
+        "layers.5.swin2.norm1.bias": [
+          212
+        ],
+        "layers.5.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.5.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.5.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.5.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.5.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.5.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.5.swin2.norm2.weight": [
+          212
+        ],
+        "layers.5.swin2.norm2.bias": [
+          212
+        ],
+        "layers.5.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.5.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.5.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.5.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.5.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.5.adjust2.bias": [
+          32
+        ],
+        "layers.5.swin3.norm1.weight": [
+          244
+        ],
+        "layers.5.swin3.norm1.bias": [
+          244
+        ],
+        "layers.5.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.5.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.5.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.5.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.5.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.5.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.5.swin3.norm2.weight": [
+          244
+        ],
+        "layers.5.swin3.norm2.bias": [
+          244
+        ],
+        "layers.5.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.5.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.5.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.5.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.5.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.5.adjust3.bias": [
+          32
+        ],
+        "layers.5.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.5.swin4.norm1.weight": [
+          276
+        ],
+        "layers.5.swin4.norm1.bias": [
+          276
+        ],
+        "layers.5.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.5.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.5.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.5.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.5.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.5.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.5.swin4.norm2.weight": [
+          276
+        ],
+        "layers.5.swin4.norm2.bias": [
+          276
+        ],
+        "layers.5.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.5.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.5.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.5.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.5.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.5.adjust4.bias": [
+          32
+        ],
+        "layers.5.swin5.norm1.weight": [
+          308
+        ],
+        "layers.5.swin5.norm1.bias": [
+          308
+        ],
+        "layers.5.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.5.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.5.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.5.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.5.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.5.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.5.swin5.norm2.weight": [
+          308
+        ],
+        "layers.5.swin5.norm2.bias": [
+          308
+        ],
+        "layers.5.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.5.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.5.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.5.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.5.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.5.adjust5.bias": [
+          180
+        ],
+        "layers.6.swin1.norm1.weight": [
+          180
+        ],
+        "layers.6.swin1.norm1.bias": [
+          180
+        ],
+        "layers.6.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.6.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.6.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.6.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.6.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.6.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.6.swin1.norm2.weight": [
+          180
+        ],
+        "layers.6.swin1.norm2.bias": [
+          180
+        ],
+        "layers.6.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.6.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.6.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.6.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.6.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.6.adjust1.bias": [
+          32
+        ],
+        "layers.6.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.6.swin2.norm1.weight": [
+          212
+        ],
+        "layers.6.swin2.norm1.bias": [
+          212
+        ],
+        "layers.6.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.6.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.6.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.6.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.6.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.6.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.6.swin2.norm2.weight": [
+          212
+        ],
+        "layers.6.swin2.norm2.bias": [
+          212
+        ],
+        "layers.6.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.6.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.6.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.6.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.6.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.6.adjust2.bias": [
+          32
+        ],
+        "layers.6.swin3.norm1.weight": [
+          244
+        ],
+        "layers.6.swin3.norm1.bias": [
+          244
+        ],
+        "layers.6.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.6.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.6.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.6.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.6.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.6.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.6.swin3.norm2.weight": [
+          244
+        ],
+        "layers.6.swin3.norm2.bias": [
+          244
+        ],
+        "layers.6.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.6.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.6.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.6.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.6.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.6.adjust3.bias": [
+          32
+        ],
+        "layers.6.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.6.swin4.norm1.weight": [
+          276
+        ],
+        "layers.6.swin4.norm1.bias": [
+          276
+        ],
+        "layers.6.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.6.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.6.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.6.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.6.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.6.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.6.swin4.norm2.weight": [
+          276
+        ],
+        "layers.6.swin4.norm2.bias": [
+          276
+        ],
+        "layers.6.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.6.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.6.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.6.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.6.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.6.adjust4.bias": [
+          32
+        ],
+        "layers.6.swin5.norm1.weight": [
+          308
+        ],
+        "layers.6.swin5.norm1.bias": [
+          308
+        ],
+        "layers.6.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.6.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.6.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.6.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.6.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.6.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.6.swin5.norm2.weight": [
+          308
+        ],
+        "layers.6.swin5.norm2.bias": [
+          308
+        ],
+        "layers.6.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.6.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.6.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.6.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.6.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.6.adjust5.bias": [
+          180
+        ],
+        "layers.7.swin1.norm1.weight": [
+          180
+        ],
+        "layers.7.swin1.norm1.bias": [
+          180
+        ],
+        "layers.7.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.7.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.7.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.7.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.7.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.7.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.7.swin1.norm2.weight": [
+          180
+        ],
+        "layers.7.swin1.norm2.bias": [
+          180
+        ],
+        "layers.7.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.7.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.7.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.7.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.7.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.7.adjust1.bias": [
+          32
+        ],
+        "layers.7.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.7.swin2.norm1.weight": [
+          212
+        ],
+        "layers.7.swin2.norm1.bias": [
+          212
+        ],
+        "layers.7.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.7.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.7.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.7.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.7.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.7.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.7.swin2.norm2.weight": [
+          212
+        ],
+        "layers.7.swin2.norm2.bias": [
+          212
+        ],
+        "layers.7.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.7.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.7.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.7.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.7.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.7.adjust2.bias": [
+          32
+        ],
+        "layers.7.swin3.norm1.weight": [
+          244
+        ],
+        "layers.7.swin3.norm1.bias": [
+          244
+        ],
+        "layers.7.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.7.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.7.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.7.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.7.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.7.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.7.swin3.norm2.weight": [
+          244
+        ],
+        "layers.7.swin3.norm2.bias": [
+          244
+        ],
+        "layers.7.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.7.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.7.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.7.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.7.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.7.adjust3.bias": [
+          32
+        ],
+        "layers.7.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.7.swin4.norm1.weight": [
+          276
+        ],
+        "layers.7.swin4.norm1.bias": [
+          276
+        ],
+        "layers.7.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.7.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.7.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.7.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.7.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.7.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.7.swin4.norm2.weight": [
+          276
+        ],
+        "layers.7.swin4.norm2.bias": [
+          276
+        ],
+        "layers.7.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.7.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.7.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.7.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.7.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.7.adjust4.bias": [
+          32
+        ],
+        "layers.7.swin5.norm1.weight": [
+          308
+        ],
+        "layers.7.swin5.norm1.bias": [
+          308
+        ],
+        "layers.7.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.7.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.7.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.7.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.7.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.7.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.7.swin5.norm2.weight": [
+          308
+        ],
+        "layers.7.swin5.norm2.bias": [
+          308
+        ],
+        "layers.7.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.7.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.7.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.7.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.7.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.7.adjust5.bias": [
+          180
+        ],
+        "layers.8.swin1.norm1.weight": [
+          180
+        ],
+        "layers.8.swin1.norm1.bias": [
+          180
+        ],
+        "layers.8.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.8.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.8.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.8.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.8.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.8.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.8.swin1.norm2.weight": [
+          180
+        ],
+        "layers.8.swin1.norm2.bias": [
+          180
+        ],
+        "layers.8.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.8.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.8.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.8.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.8.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.8.adjust1.bias": [
+          32
+        ],
+        "layers.8.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.8.swin2.norm1.weight": [
+          212
+        ],
+        "layers.8.swin2.norm1.bias": [
+          212
+        ],
+        "layers.8.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.8.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.8.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.8.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.8.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.8.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.8.swin2.norm2.weight": [
+          212
+        ],
+        "layers.8.swin2.norm2.bias": [
+          212
+        ],
+        "layers.8.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.8.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.8.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.8.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.8.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.8.adjust2.bias": [
+          32
+        ],
+        "layers.8.swin3.norm1.weight": [
+          244
+        ],
+        "layers.8.swin3.norm1.bias": [
+          244
+        ],
+        "layers.8.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.8.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.8.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.8.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.8.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.8.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.8.swin3.norm2.weight": [
+          244
+        ],
+        "layers.8.swin3.norm2.bias": [
+          244
+        ],
+        "layers.8.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.8.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.8.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.8.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.8.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.8.adjust3.bias": [
+          32
+        ],
+        "layers.8.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.8.swin4.norm1.weight": [
+          276
+        ],
+        "layers.8.swin4.norm1.bias": [
+          276
+        ],
+        "layers.8.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.8.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.8.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.8.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.8.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.8.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.8.swin4.norm2.weight": [
+          276
+        ],
+        "layers.8.swin4.norm2.bias": [
+          276
+        ],
+        "layers.8.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.8.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.8.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.8.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.8.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.8.adjust4.bias": [
+          32
+        ],
+        "layers.8.swin5.norm1.weight": [
+          308
+        ],
+        "layers.8.swin5.norm1.bias": [
+          308
+        ],
+        "layers.8.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.8.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.8.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.8.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.8.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.8.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.8.swin5.norm2.weight": [
+          308
+        ],
+        "layers.8.swin5.norm2.bias": [
+          308
+        ],
+        "layers.8.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.8.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.8.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.8.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.8.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.8.adjust5.bias": [
+          180
+        ],
+        "layers.9.swin1.norm1.weight": [
+          180
+        ],
+        "layers.9.swin1.norm1.bias": [
+          180
+        ],
+        "layers.9.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.9.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.9.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.9.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.9.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.9.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.9.swin1.norm2.weight": [
+          180
+        ],
+        "layers.9.swin1.norm2.bias": [
+          180
+        ],
+        "layers.9.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.9.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.9.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.9.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.9.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.9.adjust1.bias": [
+          32
+        ],
+        "layers.9.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.9.swin2.norm1.weight": [
+          212
+        ],
+        "layers.9.swin2.norm1.bias": [
+          212
+        ],
+        "layers.9.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.9.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.9.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.9.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.9.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.9.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.9.swin2.norm2.weight": [
+          212
+        ],
+        "layers.9.swin2.norm2.bias": [
+          212
+        ],
+        "layers.9.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.9.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.9.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.9.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.9.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.9.adjust2.bias": [
+          32
+        ],
+        "layers.9.swin3.norm1.weight": [
+          244
+        ],
+        "layers.9.swin3.norm1.bias": [
+          244
+        ],
+        "layers.9.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.9.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.9.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.9.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.9.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.9.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.9.swin3.norm2.weight": [
+          244
+        ],
+        "layers.9.swin3.norm2.bias": [
+          244
+        ],
+        "layers.9.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.9.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.9.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.9.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.9.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.9.adjust3.bias": [
+          32
+        ],
+        "layers.9.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.9.swin4.norm1.weight": [
+          276
+        ],
+        "layers.9.swin4.norm1.bias": [
+          276
+        ],
+        "layers.9.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.9.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.9.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.9.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.9.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.9.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.9.swin4.norm2.weight": [
+          276
+        ],
+        "layers.9.swin4.norm2.bias": [
+          276
+        ],
+        "layers.9.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.9.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.9.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.9.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.9.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.9.adjust4.bias": [
+          32
+        ],
+        "layers.9.swin5.norm1.weight": [
+          308
+        ],
+        "layers.9.swin5.norm1.bias": [
+          308
+        ],
+        "layers.9.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.9.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.9.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.9.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.9.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.9.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.9.swin5.norm2.weight": [
+          308
+        ],
+        "layers.9.swin5.norm2.bias": [
+          308
+        ],
+        "layers.9.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.9.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.9.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.9.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.9.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.9.adjust5.bias": [
+          180
+        ],
+        "layers.10.swin1.norm1.weight": [
+          180
+        ],
+        "layers.10.swin1.norm1.bias": [
+          180
+        ],
+        "layers.10.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.10.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.10.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.10.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.10.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.10.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.10.swin1.norm2.weight": [
+          180
+        ],
+        "layers.10.swin1.norm2.bias": [
+          180
+        ],
+        "layers.10.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.10.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.10.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.10.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.10.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.10.adjust1.bias": [
+          32
+        ],
+        "layers.10.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.10.swin2.norm1.weight": [
+          212
+        ],
+        "layers.10.swin2.norm1.bias": [
+          212
+        ],
+        "layers.10.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.10.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.10.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.10.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.10.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.10.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.10.swin2.norm2.weight": [
+          212
+        ],
+        "layers.10.swin2.norm2.bias": [
+          212
+        ],
+        "layers.10.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.10.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.10.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.10.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.10.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.10.adjust2.bias": [
+          32
+        ],
+        "layers.10.swin3.norm1.weight": [
+          244
+        ],
+        "layers.10.swin3.norm1.bias": [
+          244
+        ],
+        "layers.10.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.10.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.10.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.10.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.10.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.10.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.10.swin3.norm2.weight": [
+          244
+        ],
+        "layers.10.swin3.norm2.bias": [
+          244
+        ],
+        "layers.10.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.10.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.10.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.10.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.10.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.10.adjust3.bias": [
+          32
+        ],
+        "layers.10.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.10.swin4.norm1.weight": [
+          276
+        ],
+        "layers.10.swin4.norm1.bias": [
+          276
+        ],
+        "layers.10.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.10.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.10.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.10.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.10.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.10.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.10.swin4.norm2.weight": [
+          276
+        ],
+        "layers.10.swin4.norm2.bias": [
+          276
+        ],
+        "layers.10.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.10.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.10.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.10.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.10.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.10.adjust4.bias": [
+          32
+        ],
+        "layers.10.swin5.norm1.weight": [
+          308
+        ],
+        "layers.10.swin5.norm1.bias": [
+          308
+        ],
+        "layers.10.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.10.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.10.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.10.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.10.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.10.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.10.swin5.norm2.weight": [
+          308
+        ],
+        "layers.10.swin5.norm2.bias": [
+          308
+        ],
+        "layers.10.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.10.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.10.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.10.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.10.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.10.adjust5.bias": [
+          180
+        ],
+        "layers.11.swin1.norm1.weight": [
+          180
+        ],
+        "layers.11.swin1.norm1.bias": [
+          180
+        ],
+        "layers.11.swin1.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.11.swin1.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.11.swin1.attn.qkv.weight": [
+          540,
+          180
+        ],
+        "layers.11.swin1.attn.qkv.bias": [
+          540
+        ],
+        "layers.11.swin1.attn.proj.weight": [
+          180,
+          180
+        ],
+        "layers.11.swin1.attn.proj.bias": [
+          180
+        ],
+        "layers.11.swin1.norm2.weight": [
+          180
+        ],
+        "layers.11.swin1.norm2.bias": [
+          180
+        ],
+        "layers.11.swin1.mlp.fc1.weight": [
+          360,
+          180
+        ],
+        "layers.11.swin1.mlp.fc1.bias": [
+          360
+        ],
+        "layers.11.swin1.mlp.fc2.weight": [
+          180,
+          360
+        ],
+        "layers.11.swin1.mlp.fc2.bias": [
+          180
+        ],
+        "layers.11.adjust1.weight": [
+          32,
+          180,
+          1,
+          1
+        ],
+        "layers.11.adjust1.bias": [
+          32
+        ],
+        "layers.11.swin2.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.11.swin2.norm1.weight": [
+          212
+        ],
+        "layers.11.swin2.norm1.bias": [
+          212
+        ],
+        "layers.11.swin2.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.11.swin2.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.11.swin2.attn.qkv.weight": [
+          636,
+          212
+        ],
+        "layers.11.swin2.attn.qkv.bias": [
+          636
+        ],
+        "layers.11.swin2.attn.proj.weight": [
+          212,
+          212
+        ],
+        "layers.11.swin2.attn.proj.bias": [
+          212
+        ],
+        "layers.11.swin2.norm2.weight": [
+          212
+        ],
+        "layers.11.swin2.norm2.bias": [
+          212
+        ],
+        "layers.11.swin2.mlp.fc1.weight": [
+          424,
+          212
+        ],
+        "layers.11.swin2.mlp.fc1.bias": [
+          424
+        ],
+        "layers.11.swin2.mlp.fc2.weight": [
+          212,
+          424
+        ],
+        "layers.11.swin2.mlp.fc2.bias": [
+          212
+        ],
+        "layers.11.adjust2.weight": [
+          32,
+          212,
+          1,
+          1
+        ],
+        "layers.11.adjust2.bias": [
+          32
+        ],
+        "layers.11.swin3.norm1.weight": [
+          244
+        ],
+        "layers.11.swin3.norm1.bias": [
+          244
+        ],
+        "layers.11.swin3.attn.relative_position_bias_table": [
+          961,
+          2
+        ],
+        "layers.11.swin3.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.11.swin3.attn.qkv.weight": [
+          732,
+          244
+        ],
+        "layers.11.swin3.attn.qkv.bias": [
+          732
+        ],
+        "layers.11.swin3.attn.proj.weight": [
+          244,
+          244
+        ],
+        "layers.11.swin3.attn.proj.bias": [
+          244
+        ],
+        "layers.11.swin3.norm2.weight": [
+          244
+        ],
+        "layers.11.swin3.norm2.bias": [
+          244
+        ],
+        "layers.11.swin3.mlp.fc1.weight": [
+          488,
+          244
+        ],
+        "layers.11.swin3.mlp.fc1.bias": [
+          488
+        ],
+        "layers.11.swin3.mlp.fc2.weight": [
+          244,
+          488
+        ],
+        "layers.11.swin3.mlp.fc2.bias": [
+          244
+        ],
+        "layers.11.adjust3.weight": [
+          32,
+          244,
+          1,
+          1
+        ],
+        "layers.11.adjust3.bias": [
+          32
+        ],
+        "layers.11.swin4.attn_mask": [
+          16,
+          256,
+          256
+        ],
+        "layers.11.swin4.norm1.weight": [
+          276
+        ],
+        "layers.11.swin4.norm1.bias": [
+          276
+        ],
+        "layers.11.swin4.attn.relative_position_bias_table": [
+          961,
+          6
+        ],
+        "layers.11.swin4.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.11.swin4.attn.qkv.weight": [
+          828,
+          276
+        ],
+        "layers.11.swin4.attn.qkv.bias": [
+          828
+        ],
+        "layers.11.swin4.attn.proj.weight": [
+          276,
+          276
+        ],
+        "layers.11.swin4.attn.proj.bias": [
+          276
+        ],
+        "layers.11.swin4.norm2.weight": [
+          276
+        ],
+        "layers.11.swin4.norm2.bias": [
+          276
+        ],
+        "layers.11.swin4.mlp.fc1.weight": [
+          276,
+          276
+        ],
+        "layers.11.swin4.mlp.fc1.bias": [
+          276
+        ],
+        "layers.11.swin4.mlp.fc2.weight": [
+          276,
+          276
+        ],
+        "layers.11.swin4.mlp.fc2.bias": [
+          276
+        ],
+        "layers.11.adjust4.weight": [
+          32,
+          276,
+          1,
+          1
+        ],
+        "layers.11.adjust4.bias": [
+          32
+        ],
+        "layers.11.swin5.norm1.weight": [
+          308
+        ],
+        "layers.11.swin5.norm1.bias": [
+          308
+        ],
+        "layers.11.swin5.attn.relative_position_bias_table": [
+          961,
+          4
+        ],
+        "layers.11.swin5.attn.relative_position_index": [
+          256,
+          256
+        ],
+        "layers.11.swin5.attn.qkv.weight": [
+          924,
+          308
+        ],
+        "layers.11.swin5.attn.qkv.bias": [
+          924
+        ],
+        "layers.11.swin5.attn.proj.weight": [
+          308,
+          308
+        ],
+        "layers.11.swin5.attn.proj.bias": [
+          308
+        ],
+        "layers.11.swin5.norm2.weight": [
+          308
+        ],
+        "layers.11.swin5.norm2.bias": [
+          308
+        ],
+        "layers.11.swin5.mlp.fc1.weight": [
+          308,
+          308
+        ],
+        "layers.11.swin5.mlp.fc1.bias": [
+          308
+        ],
+        "layers.11.swin5.mlp.fc2.weight": [
+          308,
+          308
+        ],
+        "layers.11.swin5.mlp.fc2.bias": [
+          308
+        ],
+        "layers.11.adjust5.weight": [
+          180,
+          308,
+          1,
+          1
+        ],
+        "layers.11.adjust5.bias": [
+          180
+        ],
+        "norm.weight": [
+          180
+        ],
+        "norm.bias": [
+          180
+        ],
+        "conv_after_body.weight": [
+          180,
+          180,
+          3,
+          3
+        ],
+        "conv_after_body.bias": [
+          180
+        ],
+        "conv_before_upsample.0.weight": [
+          64,
+          180,
+          3,
+          3
+        ],
+        "conv_before_upsample.0.bias": [
+          64
+        ],
+        "upsample.0.weight": [
+          256,
+          64,
+          3,
+          3
+        ],
+        "upsample.0.bias": [
+          256
+        ],
+        "upsample.2.weight": [
+          256,
+          64,
+          3,
+          3
+        ],
+        "upsample.2.bias": [
+          256
+        ],
+        "conv_last.weight": [
+          3,
+          64,
+          3,
+          3
+        ],
+        "conv_last.bias": [
+          3
+        ]
+      }
+    }
+  }
+}

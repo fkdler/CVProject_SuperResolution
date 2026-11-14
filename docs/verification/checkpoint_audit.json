@@ -1,0 +1,34 @@
+{
+  "checkpoint": "DRCT-L_X4.pth",
+  "bytes": 485570697,
+  "sha256": "a99044c0275699d1a296ae21b8f322fa8c65d7b9be2213ee2a3dcc280ab8d64b",
+  "source_url": "https://drive.google.com/file/d/1bVxvA6QFbne2se0CQJ-jyHFy94UOi3h5/view",
+  "source_commit": "c0a8b51e69241cf7f8ae598053235ff498517935",
+  "torch": "2.15.0+cpu",
+  "top_level_keys": [
+    "params",
+    "params_ema"
+  ],
+  "yaml_requested_key": "params_ema",
+  "branches": {
+    "params": {
+      "entries": 1000,
+      "missing": [],
+      "unexpected": [],
+      "shape_mismatches": {},
+      "geometry_buffer_mismatches": [],
+      "all_floating_tensors_finite": true,
+      "strict_load": "passed"
+    },
+    "params_ema": {
+      "entries": 1000,
+      "missing": [],
+      "unexpected": [],
+      "shape_mismatches": {},
+      "geometry_buffer_mismatches": [],
+      "all_floating_tensors_finite": true,
+      "strict_load": "passed"
+    }
+  },
+  "yaml_requested_key_available": true
+}

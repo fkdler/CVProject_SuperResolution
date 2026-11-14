@@ -1,0 +1,5 @@
+# Use Python and CANN from the verified ModelArts image; do not reinstall them.
+# Validate the existing runtime first. This file documents the target dependency.
+mindspore==2.7.2
+numpy>=1.24,<3
+pytest>=8

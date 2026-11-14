@@ -1,0 +1,39 @@
+{
+  "recorded_date": "2026-11-14",
+  "repositories": [
+    {
+      "name": "DRCT",
+      "url": "https://github.com/ming053l/DRCT.git",
+      "commit": "c0a8b51e69241cf7f8ae598053235ff498517935",
+      "directory": "reference/DRCT"
+    },
+    {
+      "name": "BasicSR",
+      "url": "https://github.com/XPixelGroup/BasicSR.git",
+      "ref": "v1.3.4.9",
+      "commit": "5668ba75eb8a77e8d2dd46746a36fee0fbb0fdcd",
+      "directory": "reference/BasicSR"
+    }
+  ],
+  "hash_normalization": "CRLF to LF before SHA-256",
+  "source_sha256": {
+    "reference/DRCT/drct/archs/DRCT_arch.py": "d70fee3763fab71fc8af44f0a476ebd847de1b10d4da110323df803904de18ca",
+    "reference/BasicSR/basicsr/archs/arch_util.py": "e5845204e7b0b4fab175b65c7ac472b31b8242b556abccb41223eff9a79504f0"
+  },
+  "paper": {
+    "url": "https://arxiv.org/abs/2404.00722v5",
+    "html": "https://arxiv.org/html/2404.00722v5",
+    "version": "v5"
+  },
+  "checkpoint": {
+    "name": "DRCT-L_X4.pth",
+    "source": "official DRCT README DRCT-L benchmark row",
+    "url": "https://drive.google.com/file/d/1bVxvA6QFbne2se0CQJ-jyHFy94UOi3h5/view",
+    "local_path": "weights/DRCT-L_X4.pth",
+    "sha256": "a99044c0275699d1a296ae21b8f322fa8c65d7b9be2213ee2a3dcc280ab8d64b",
+    "bytes": 485570697,
+    "verified_branches": ["params", "params_ema"],
+    "primary_branch": "params_ema",
+    "verification_report": "docs/verification/checkpoint_audit.json"
+  }
+}

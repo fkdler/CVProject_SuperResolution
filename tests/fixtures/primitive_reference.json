@@ -1,0 +1,102 @@
+{
+  "generator": "python -m tools.generate_primitive_fixtures",
+  "torch": "2.15.0+cpu",
+  "numpy": "2.5.4",
+  "device": "CPU",
+  "dtype": "float32",
+  "source_sha256_lf": {
+    "reference/DRCT/drct/archs/DRCT_arch.py": "d70fee3763fab71fc8af44f0a476ebd847de1b10d4da110323df803904de18ca",
+    "reference/BasicSR/basicsr/archs/arch_util.py": "e5845204e7b0b4fab175b65c7ac472b31b8242b556abccb41223eff9a79504f0"
+  },
+  "artifact_sha256": "96d7a036df20579c46fdcac0b944e591767aa7ed9d8c8d3f23c6e97c6fe1d449",
+  "seeds": {
+    "torch": 0,
+    "patch_numpy": 42,
+    "mlp_numpy": 7
+  },
+  "arrays": {
+    "window_x": [
+      2,
+      32,
+      48,
+      3
+    ],
+    "window_y": [
+      12,
+      16,
+      16,
+      3
+    ],
+    "patch_x": [
+      2,
+      12,
+      8,
+      12
+    ],
+    "patch_gamma": [
+      12
+    ],
+    "patch_beta": [
+      12
+    ],
+    "patch_y": [
+      2,
+      96,
+      12
+    ],
+    "shuffle2_x": [
+      2,
+      12,
+      4,
+      5
+    ],
+    "shuffle2_y": [
+      2,
+      3,
+      8,
+      10
+    ],
+    "shuffle3_x": [
+      2,
+      27,
+      4,
+      5
+    ],
+    "shuffle3_y": [
+      2,
+      3,
+      12,
+      15
+    ],
+    "mlp_fc1.weight": [
+      24,
+      12
+    ],
+    "mlp_fc1.bias": [
+      24
+    ],
+    "mlp_fc2.weight": [
+      12,
+      24
+    ],
+    "mlp_fc2.bias": [
+      12
+    ],
+    "mlp_x": [
+      2,
+      16,
+      12
+    ],
+    "mlp_y": [
+      2,
+      16,
+      12
+    ],
+    "mlp_input_grad": [
+      2,
+      16,
+      12
+    ]
+  },
+  "purpose": "Reference outputs and MLP input gradients; not evidence of MindSpore runtime validation"
+}
