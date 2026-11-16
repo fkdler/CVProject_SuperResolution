@@ -1,0 +1,8 @@
+{
+  "check": "AST parse + JSON/TOML parse + no torch imports in src",
+  "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "python_files": 31,
+  "frameworks_imported": false,
+  "numeric_tests_executed": false,
+  "passed": true
+}

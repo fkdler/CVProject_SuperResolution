@@ -4,6 +4,11 @@
 版本见 `reference/manifest.json`。开发验证工具读取原始 DRCT 与 BasicSR 定义。
 独立参考仓库不并入本项目代码，原始许可证保留在各自目录。
 
+`src/drct_ms/evaluation.py`的PSNR、SSIM和BT.601转换计算改写自
+[BasicSR 1.3.4.9](https://github.com/XPixelGroup/BasicSR/tree/v1.3.4.9)，适用Apache-2.0。
+改动包括云端运行保护、严格uint8/BGR接口、协议命名和输入验证；原指标数学式保持一致，
+以固定源文件逐项对照。完整许可证见`licenses/BasicSR-Apache-2.0.txt`。
+
 DRCT 派生部分适用以下许可证：
 
 MIT License

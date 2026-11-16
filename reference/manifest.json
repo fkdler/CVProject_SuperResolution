@@ -18,7 +18,11 @@
   "hash_normalization": "CRLF to LF before SHA-256",
   "source_sha256": {
     "reference/DRCT/drct/archs/DRCT_arch.py": "d70fee3763fab71fc8af44f0a476ebd847de1b10d4da110323df803904de18ca",
-    "reference/BasicSR/basicsr/archs/arch_util.py": "e5845204e7b0b4fab175b65c7ac472b31b8242b556abccb41223eff9a79504f0"
+    "reference/BasicSR/basicsr/archs/arch_util.py": "e5845204e7b0b4fab175b65c7ac472b31b8242b556abccb41223eff9a79504f0",
+    "reference/BasicSR/basicsr/metrics/psnr_ssim.py": "48ddec6093cfe243764c99d85101f3f44eea78ee7485f617f4bc966fd72b563e",
+    "reference/BasicSR/basicsr/metrics/metric_util.py": "f16b1a6d9ab98f48e4dc6ced80523da8a9cf815ad72b87c89eac997e872a781a",
+    "reference/BasicSR/basicsr/utils/matlab_functions.py": "ffcc1e63b7afda9393d91931632deaac6e87a600198c63269804b57132cb93a3",
+    "reference/BasicSR/basicsr/utils/img_util.py": "4355eb11d995ee01f7a6c6f88dfd41025360348b11105d70c11288eca926f537"
   },
   "paper": {
     "url": "https://arxiv.org/abs/2404.00722v5",

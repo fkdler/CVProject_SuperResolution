@@ -20,10 +20,24 @@ def main():
                 selected.add(path)
     for relative in [
         "AGENTS.md", "README.md", "THIRD_PARTY_NOTICES.md", "pyproject.toml", "reference/manifest.json",
+        "licenses/BasicSR-Apache-2.0.txt",
         "docs/verification/reference_audit.json", "docs/cloud_validation.md", "requirements/reference.txt",
         "docs/progress.md", "docs/migration.md", "docs/source_analysis.md",
         "docs/verification/checkpoint_audit.json", "data/README.md", "weights/README.md",
         "docs/verification/stage2.md",
+        "docs/stage3_evaluation.md",
+        "docs/verification/stage3.md",
+        "docs/verification/stage3/dataset_manifest.json",
+        "docs/verification/stage3/evaluation_parity.json",
+        "docs/verification/stage3/comparison.json",
+        "docs/verification/stage3/comparison.csv",
+        "docs/verification/stage3/mindspore_report.json",
+        "docs/verification/stage3/mindspore_per_image.csv",
+        "docs/verification/stage3/torch_report.json",
+        "docs/verification/stage3/torch_per_image.csv",
+        "docs/verification/stage3/params_diagnostic_report.json",
+        "docs/verification/stage3/params_alignment.json",
+        "docs/verification/stage3/params_conversion.json",
         "docs/verification/ascend_stage2/alignment_pynative_matmul.json",
         "docs/verification/ascend_stage2/alignment_graph_matmul.json",
         "reference/DRCT/drct/archs/DRCT_arch.py", "reference/DRCT/LICENSE",
@@ -31,6 +45,10 @@ def main():
         "reference/DRCT/options/test/DRCT-L_SRx4_ImageNet-pretrain.yml",
         "reference/BasicSR/basicsr/archs/arch_util.py", "reference/BasicSR/LICENSE/LICENSE",
         "reference/BasicSR/LICENSE/README.md", "reference/BasicSR/LICENSE/LICENSE_pytorch-image-models",
+        "reference/BasicSR/basicsr/metrics/psnr_ssim.py",
+        "reference/BasicSR/basicsr/metrics/metric_util.py",
+        "reference/BasicSR/basicsr/utils/matlab_functions.py",
+        "reference/BasicSR/basicsr/utils/img_util.py",
     ]:
         path = ROOT / relative
         if not path.is_file():

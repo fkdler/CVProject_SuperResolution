@@ -1,0 +1,15 @@
+{
+  "numeric_processing": false,
+  "files": [
+    {
+      "file": "experiments/stage3_primary_outputs.tar",
+      "bytes": 87152640,
+      "sha256": "f5a2c7f243ef4d81d0671fd605c5aeae0414497d634616f0fa1a5df7cfe6f89c"
+    },
+    {
+      "file": "experiments/stage3_sr_images.tar",
+      "bytes": 4915200,
+      "sha256": "968d15834346840ce9c0fc952f961aa004d7a019ef53d2171735ab183e967e07"
+    }
+  ]
+}

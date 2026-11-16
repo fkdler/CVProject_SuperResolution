@@ -1,0 +1,11 @@
+{
+  "dataset": "Set14",
+  "scale": 4,
+  "repository": "https://github.com/jbhuang0604/SelfExSR",
+  "commit": "8f6dd8c1d20cb7e8792a7177b4f6fd677633f598",
+  "directory": "data/Set14/image_SRF_4",
+  "raw_root": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4",
+  "count": 14,
+  "degradation": "Use the repository's pre-generated SRF4 LR PNGs without resizing; precise author generation settings are not independently reconstructed",
+  "role": "test only; no training or model selection"
+}

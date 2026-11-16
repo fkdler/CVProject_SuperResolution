@@ -18,7 +18,7 @@ def main():
                     raise ValueError(f"PyTorch inference dependency inside MindSpore source: {path}")
                 if isinstance(node, ast.ImportFrom) and (node.module or "").split(".")[0] == "torch":
                     raise ValueError(f"PyTorch inference dependency inside MindSpore source: {path}")
-    for path in [root / "configs/drct_l_x4.json", root / "reference/manifest.json"]:
+    for path in [*sorted((root / "configs").glob("*.json")), root / "reference/manifest.json"]:
         json.loads(path.read_text(encoding="utf-8"))
     tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))
     report = {"check": "AST parse + JSON/TOML parse + no torch imports in src", "python": sys.version,

@@ -1,0 +1,395 @@
+{
+  "schema": 1,
+  "source": {
+    "dataset": "Set14",
+    "scale": 4,
+    "repository": "https://github.com/jbhuang0604/SelfExSR",
+    "commit": "8f6dd8c1d20cb7e8792a7177b4f6fd677633f598",
+    "directory": "data/Set14/image_SRF_4",
+    "raw_root": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4",
+    "count": 14,
+    "degradation": "Use the repository's pre-generated SRF4 LR PNGs without resizing; precise author generation settings are not independently reconstructed",
+    "role": "test only; no training or model selection"
+  },
+  "pairs": [
+    {
+      "id": "img_001",
+      "hr": {
+        "file": "img_001_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_001_SRF_4_HR.png",
+        "sha256": "457712bbc26ecc5cf27a05676bfa87ffc961072e1528bd91d5d682114d48da0d",
+        "bytes": 531037,
+        "png": {
+          "width": 500,
+          "height": 480,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_001_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_001_SRF_4_LR.png",
+        "sha256": "443210ded3c07cacf06b5e146bc67dc1133e90bee3ff610ec05d233dbd33789a",
+        "bytes": 33902,
+        "png": {
+          "width": 125,
+          "height": 120,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_002",
+      "hr": {
+        "file": "img_002_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_002_SRF_4_HR.png",
+        "sha256": "40a708d97eaa92dc50c2f6f75f311be9e19ab929461326b09ab762932d55ff44",
+        "bytes": 821015,
+        "png": {
+          "width": 720,
+          "height": 576,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_002_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_002_SRF_4_LR.png",
+        "sha256": "8cbedfcdddc1f74e51e0a55d1e1ba69d4f8330f5fbe6f043cf9ed9a4cba3b4fd",
+        "bytes": 51773,
+        "png": {
+          "width": 180,
+          "height": 144,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_003",
+      "hr": {
+        "file": "img_003_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_003_SRF_4_HR.png",
+        "sha256": "43c69e440a72615c1950247be2d328b61e3e26416e73279b74a93392c6e7c689",
+        "bytes": 162038,
+        "png": {
+          "width": 512,
+          "height": 512,
+          "bit_depth": 8,
+          "color_type": 0
+        }
+      },
+      "lr": {
+        "file": "img_003_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_003_SRF_4_LR.png",
+        "sha256": "c1c3d0d55244256b5f6e6b22dde2c3f22f4bc1147cefc753f49d8dda4d95c7e9",
+        "bytes": 12341,
+        "png": {
+          "width": 128,
+          "height": 128,
+          "bit_depth": 8,
+          "color_type": 0
+        }
+      }
+    },
+    {
+      "id": "img_004",
+      "hr": {
+        "file": "img_004_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_004_SRF_4_HR.png",
+        "sha256": "4cfc2896b758d7003df528bd844791e2a65b97b21fa22609831b291e91d53986",
+        "bytes": 154469,
+        "png": {
+          "width": 352,
+          "height": 288,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_004_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_004_SRF_4_LR.png",
+        "sha256": "f769ea1974eca6df9d8dbddfc25c313d0fb58e574cbabdb6fb1194df254d134e",
+        "bytes": 11222,
+        "png": {
+          "width": 88,
+          "height": 72,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_005",
+      "hr": {
+        "file": "img_005_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_005_SRF_4_HR.png",
+        "sha256": "5bf09299d1aa23249ae02e6537753f55185332c66f2fcbe93bcc0980de568c94",
+        "bytes": 190906,
+        "png": {
+          "width": 248,
+          "height": 360,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_005_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_005_SRF_4_LR.png",
+        "sha256": "234e8535710f5b3f3ab28ceb4e2f1f87b69a11eb527b864953383d07cc42aed4",
+        "bytes": 14139,
+        "png": {
+          "width": 62,
+          "height": 90,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_006",
+      "hr": {
+        "file": "img_006_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_006_SRF_4_HR.png",
+        "sha256": "3e5dfb51996f2f40549c91250572c41534a7f2e1b6d7bd2c2f340ff217f7b8d6",
+        "bytes": 110826,
+        "png": {
+          "width": 276,
+          "height": 276,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_006_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_006_SRF_4_LR.png",
+        "sha256": "6034ae7e797fdeef6df3d6f205ba8a3a4d3bb9790e64987b8ba5cfdde55eb13f",
+        "bytes": 8834,
+        "png": {
+          "width": 69,
+          "height": 69,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_007",
+      "hr": {
+        "file": "img_007_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_007_SRF_4_HR.png",
+        "sha256": "40860b285980c1496bc4d5895d31f6fdab3fe437978b241d4d00571e0222b5b4",
+        "bytes": 346976,
+        "png": {
+          "width": 500,
+          "height": 360,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_007_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_007_SRF_4_LR.png",
+        "sha256": "fe3207f4376bbdf32c276a9ed525b24cccc8bcd3e59f93e6a728f04b488cf6bf",
+        "bytes": 24870,
+        "png": {
+          "width": 125,
+          "height": 90,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_008",
+      "hr": {
+        "file": "img_008_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_008_SRF_4_HR.png",
+        "sha256": "d5e2489c2f0255cb37c331da240b46e7bca03b4c1de26347e4d5c648a90f04bc",
+        "bytes": 130720,
+        "png": {
+          "width": 352,
+          "height": 288,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_008_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_008_SRF_4_LR.png",
+        "sha256": "b07e5b0eff060cbf3887d27fb1d12946f5115e00a531ed3f60772a769ffbb863",
+        "bytes": 12815,
+        "png": {
+          "width": 88,
+          "height": 72,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_009",
+      "hr": {
+        "file": "img_009_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_009_SRF_4_HR.png",
+        "sha256": "3125a99a492f32b2463b2f13f70c59ebf471cba795985a3cf5758a14f8253f1e",
+        "bytes": 374782,
+        "png": {
+          "width": 512,
+          "height": 512,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_009_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_009_SRF_4_LR.png",
+        "sha256": "9bcb3b3fb82d7b280f6b95fff8f1f233532a103ea30addf00958e9a7a840148f",
+        "bytes": 30762,
+        "png": {
+          "width": 128,
+          "height": 128,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_010",
+      "hr": {
+        "file": "img_010_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_010_SRF_4_HR.png",
+        "sha256": "d677c11654040dc29148d2b89ccb5d583e32a059ecd52e64d4c4d67ce81476ba",
+        "bytes": 318631,
+        "png": {
+          "width": 512,
+          "height": 512,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_010_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_010_SRF_4_LR.png",
+        "sha256": "0af6f38b24c42f368780f91f9507af4cc586117900926896b5073560f54510ae",
+        "bytes": 23111,
+        "png": {
+          "width": 128,
+          "height": 128,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_011",
+      "hr": {
+        "file": "img_011_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_011_SRF_4_HR.png",
+        "sha256": "3bc8541d0ce9699f2770fe02702862959d62374d484d661aa4911c1c2a1a70ef",
+        "bytes": 618686,
+        "png": {
+          "width": 768,
+          "height": 512,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_011_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_011_SRF_4_LR.png",
+        "sha256": "17f997a05453b562429ab081debfd1e9bef4aa9d1bde834d9bb218536ec39d04",
+        "bytes": 48018,
+        "png": {
+          "width": 192,
+          "height": 128,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_012",
+      "hr": {
+        "file": "img_012_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_012_SRF_4_HR.png",
+        "sha256": "c40805a5ba47d0da5f480858faa078eb8ba28c4e704ce9f6c3f32338a7fb5b63",
+        "bytes": 507582,
+        "png": {
+          "width": 512,
+          "height": 512,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_012_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_012_SRF_4_LR.png",
+        "sha256": "a7bc5c41d8982eab729266de71244f528b7befc94b65add6e72d1421b13e4cf8",
+        "bytes": 31610,
+        "png": {
+          "width": 128,
+          "height": 128,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_013",
+      "hr": {
+        "file": "img_013_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_013_SRF_4_HR.png",
+        "sha256": "550a70ae67b871aabb9538ee832f2a2c59b5d39745670859556542ce62c8c042",
+        "bytes": 269141,
+        "png": {
+          "width": 528,
+          "height": 656,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_013_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_013_SRF_4_LR.png",
+        "sha256": "82cd44aefdd05d6b82b9e57c2544fd5b958e86c2fa6fe45d8fce0aedec639db0",
+        "bytes": 26776,
+        "png": {
+          "width": 132,
+          "height": 164,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    },
+    {
+      "id": "img_014",
+      "hr": {
+        "file": "img_014_SRF_4_HR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_014_SRF_4_HR.png",
+        "sha256": "501f3e84fd699fc0fb47a425b19e7b5e0207107fe242d03627d4781cd8a26282",
+        "bytes": 438007,
+        "png": {
+          "width": 584,
+          "height": 388,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      },
+      "lr": {
+        "file": "img_014_SRF_4_LR.png",
+        "url": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4/img_014_SRF_4_LR.png",
+        "sha256": "77046fe97858add23277b2b4b591c9d0d770da577028dd927c4937319396d4f0",
+        "bytes": 33872,
+        "png": {
+          "width": 146,
+          "height": 97,
+          "bit_depth": 8,
+          "color_type": 2
+        }
+      }
+    }
+  ],
+  "preparation": "Original immutable PNG bytes; no decoding, resampling or pixel computation"
+}

@@ -1,0 +1,683 @@
+{
+  "schema": 1,
+  "dataset": "Set14",
+  "scale": 4,
+  "dataset_manifest_sha256": "dcb9719a0395f617dcb83a08d6ffd11d8bbb6b7577ebbe1b68d1c77cff595e05",
+  "dataset_source": {
+    "dataset": "Set14",
+    "scale": 4,
+    "repository": "https://github.com/jbhuang0604/SelfExSR",
+    "commit": "8f6dd8c1d20cb7e8792a7177b4f6fd677633f598",
+    "directory": "data/Set14/image_SRF_4",
+    "raw_root": "https://raw.githubusercontent.com/jbhuang0604/SelfExSR/8f6dd8c1d20cb7e8792a7177b4f6fd677633f598/data/Set14/image_SRF_4",
+    "count": 14,
+    "degradation": "Use the repository's pre-generated SRF4 LR PNGs without resizing; precise author generation settings are not independently reconstructed",
+    "role": "test only; no training or model selection"
+  },
+  "framework": "mindspore",
+  "version": "2.7.2",
+  "device": "Ascend",
+  "mode": "pynative",
+  "conv_backend": "matmul",
+  "checkpoint_sha256": "572aaffb48d3547034769d2253183296ad1cb7894c3abc4f80eb471f61e8bce8",
+  "source_checkpoint_sha256": "a99044c0275699d1a296ae21b8f322fa8c65d7b9be2213ee2a3dcc280ab8d64b",
+  "branch": "params",
+  "network": {
+    "upscale": 4,
+    "in_chans": 3,
+    "img_size": 64,
+    "patch_size": 1,
+    "window_size": 16,
+    "img_range": 1.0,
+    "depths": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "embed_dim": 180,
+    "num_heads": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "gc": 32,
+    "mlp_ratio": 2,
+    "qkv_bias": true,
+    "drop_rate": 0.0,
+    "attn_drop_rate": 0.0,
+    "drop_path_rate": 0.1,
+    "ape": false,
+    "patch_norm": true,
+    "upsampler": "pixelshuffle",
+    "resi_connection": "1conv"
+  },
+  "protocols": {
+    "y_shave4": {
+      "channel": "BT.601 Y",
+      "crop_border_hr": 4
+    },
+    "rgb_shave8": {
+      "channel": "RGB",
+      "crop_border_hr": 8
+    }
+  },
+  "preprocessing": "OpenCV color decode, BGR->RGB, float32/255, right/bottom reflect to 16",
+  "quantization": "clamp [0,1], float32 *255, numpy round, uint8 before metrics",
+  "tile": false,
+  "self_ensemble": false,
+  "timing": "one full forward plus host materialization; includes first-shape compilation",
+  "code_commit": "source bundle (see source hashes)",
+  "python": "3.11.10",
+  "rows": [
+    {
+      "id": "img_001",
+      "lr_shape": [
+        120,
+        125,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        128,
+        128
+      ],
+      "output_shape": [
+        1,
+        3,
+        480,
+        500
+      ],
+      "forward_seconds": 10.662668231874704,
+      "memory": {
+        "tensor_peak_allocated_bytes": 1473505792,
+        "tensor_pool_peak_reserved_bytes": 1778384896,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "443210ded3c07cacf06b5e146bc67dc1133e90bee3ff610ec05d233dbd33789a",
+      "hr_sha256": "457712bbc26ecc5cf27a05676bfa87ffc961072e1528bd91d5d682114d48da0d",
+      "raw_sha256": "c7cebb4e3c25ce3cc74d362b56f90a0224b9b2a97369e4fc9ac072c7ec6dec22",
+      "sr_sha256": "008e22daef7fb6a8c28ee032eff1f917ba7cbe8a72926f37bb1586dd4acddfd2",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 23.27557209908416,
+          "ssim": 0.5581750299321878
+        },
+        "rgb_shave8": {
+          "psnr": 21.235436911242793,
+          "ssim": 0.49535507952210395
+        }
+      },
+      "total_seconds": 11.047678114846349
+    },
+    {
+      "id": "img_002",
+      "lr_shape": [
+        144,
+        180,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        144,
+        192
+      ],
+      "output_shape": [
+        1,
+        3,
+        576,
+        720
+      ],
+      "forward_seconds": 0.627480573952198,
+      "memory": {
+        "tensor_peak_allocated_bytes": 2399461376,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "8cbedfcdddc1f74e51e0a55d1e1ba69d4f8330f5fbe6f043cf9ed9a4cba3b4fd",
+      "hr_sha256": "40a708d97eaa92dc50c2f6f75f311be9e19ab929461326b09ab762932d55ff44",
+      "raw_sha256": "6c41f58b87a03b7ca7389ddaa9760ddfdd3e0e72e5cdc50d910218f82b1d2434",
+      "sr_sha256": "4d3203b3c3e8eb7c5c55010d007acbf8364ef71ca25b1309b1bf73478b76e8fc",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 27.090124607859742,
+          "ssim": 0.7880264636576874
+        },
+        "rgb_shave8": {
+          "psnr": 25.448061947351,
+          "ssim": 0.7519600688097533
+        }
+      },
+      "total_seconds": 1.3302330952137709
+    },
+    {
+      "id": "img_003",
+      "lr_shape": [
+        128,
+        128,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        128,
+        128
+      ],
+      "output_shape": [
+        1,
+        3,
+        512,
+        512
+      ],
+      "forward_seconds": 0.3264995086938143,
+      "memory": {
+        "tensor_peak_allocated_bytes": 1473531904,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "c1c3d0d55244256b5f6e6b22dde2c3f22f4bc1147cefc753f49d8dda4d95c7e9",
+      "hr_sha256": "43c69e440a72615c1950247be2d328b61e3e26416e73279b74a93392c6e7c689",
+      "raw_sha256": "ac7cb3471ed2c230b3b0a61039877c12b2175b5837b45a5b1a207f20e042f2a2",
+      "sr_sha256": "923befbcac4aa53db30132e94be61a488a733354e51007f6fea7fc1839ab29d7",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 25.73571115697574,
+          "ssim": 0.6570401349229084
+        },
+        "rgb_shave8": {
+          "psnr": 24.446351511117133,
+          "ssim": 0.6391112060620182
+        }
+      },
+      "total_seconds": 0.8794760163873434
+    },
+    {
+      "id": "img_004",
+      "lr_shape": [
+        72,
+        88,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        80,
+        96
+      ],
+      "output_shape": [
+        1,
+        3,
+        288,
+        352
+      ],
+      "forward_seconds": 0.43518817238509655,
+      "memory": {
+        "tensor_peak_allocated_bytes": 758022144,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "f769ea1974eca6df9d8dbddfc25c313d0fb58e574cbabdb6fb1194df254d134e",
+      "hr_sha256": "4cfc2896b758d7003df528bd844791e2a65b97b21fa22609831b291e91d53986",
+      "raw_sha256": "78d02e9e0573d8082eda70d943feaffe885d1a09d6d5599c8b5d796ed2dd67b2",
+      "sr_sha256": "ff947c66b3b468a03868a08d555ffce057b31b0fe73cfc52295e289bf207ac08",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 26.789232403078337,
+          "ssim": 0.5904669133881421
+        },
+        "rgb_shave8": {
+          "psnr": 25.440330893799516,
+          "ssim": 0.5485314463266054
+        }
+      },
+      "total_seconds": 0.6648584697395563
+    },
+    {
+      "id": "img_005",
+      "lr_shape": [
+        90,
+        62,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        96,
+        64
+      ],
+      "output_shape": [
+        1,
+        3,
+        360,
+        248
+      ],
+      "forward_seconds": 0.41666453517973423,
+      "memory": {
+        "tensor_peak_allocated_bytes": 631764992,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "234e8535710f5b3f3ab28ceb4e2f1f87b69a11eb527b864953383d07cc42aed4",
+      "hr_sha256": "5bf09299d1aa23249ae02e6537753f55185332c66f2fcbe93bcc0980de568c94",
+      "raw_sha256": "7656dcce9e8d7efa97a2e445c0ae033ad71f9faf133e95af5dcb8485ab569da8",
+      "sr_sha256": "f7bad8877b88c0195ec489ecadeda95b740f85c23d25ee6367f265f0f71f585e",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 24.173160504697577,
+          "ssim": 0.7677887437205623
+        },
+        "rgb_shave8": {
+          "psnr": 22.58893133957489,
+          "ssim": 0.749093833632808
+        }
+      },
+      "total_seconds": 0.5926330145448446
+    },
+    {
+      "id": "img_006",
+      "lr_shape": [
+        69,
+        69,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        80,
+        80
+      ],
+      "output_shape": [
+        1,
+        3,
+        276,
+        276
+      ],
+      "forward_seconds": 0.4017040375620127,
+      "memory": {
+        "tensor_peak_allocated_bytes": 652819456,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "6034ae7e797fdeef6df3d6f205ba8a3a4d3bb9790e64987b8ba5cfdde55eb13f",
+      "hr_sha256": "3e5dfb51996f2f40549c91250572c41534a7f2e1b6d7bd2c2f340ff217f7b8d6",
+      "raw_sha256": "834548f95cf53f2b20cdec230086108979314fa2cd84617a4757549788642ba9",
+      "sr_sha256": "d1af4b97bcca75366635924a368a1ceabab45ca18f85f4329c3201ca525ac5a7",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 33.17278292235522,
+          "ssim": 0.8023401502169031
+        },
+        "rgb_shave8": {
+          "psnr": 30.02561289175185,
+          "ssim": 0.7264634407520836
+        }
+      },
+      "total_seconds": 0.6095585040748119
+    },
+    {
+      "id": "img_007",
+      "lr_shape": [
+        90,
+        125,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        96,
+        128
+      ],
+      "output_shape": [
+        1,
+        3,
+        360,
+        500
+      ],
+      "forward_seconds": 0.4328499287366867,
+      "memory": {
+        "tensor_peak_allocated_bytes": 1136887808,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "fe3207f4376bbdf32c276a9ed525b24cccc8bcd3e59f93e6a728f04b488cf6bf",
+      "hr_sha256": "40860b285980c1496bc4d5895d31f6fdab3fe437978b241d4d00571e0222b5b4",
+      "raw_sha256": "d38b26965ee8b842d7053334a95033664e4277181fa6d53ffe3b80b11e616b44",
+      "sr_sha256": "77a331c0831994b255db4f999a45137fe2505c70ee0437a2f22c098cb26cef81",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 29.316859859892887,
+          "ssim": 0.8434358399061276
+        },
+        "rgb_shave8": {
+          "psnr": 27.16011262286733,
+          "ssim": 0.8176058945346858
+        }
+      },
+      "total_seconds": 0.7269747871905565
+    },
+    {
+      "id": "img_008",
+      "lr_shape": [
+        72,
+        88,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        80,
+        96
+      ],
+      "output_shape": [
+        1,
+        3,
+        288,
+        352
+      ],
+      "forward_seconds": 0.2506264019757509,
+      "memory": {
+        "tensor_peak_allocated_bytes": 758067200,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "b07e5b0eff060cbf3887d27fb1d12946f5115e00a531ed3f60772a769ffbb863",
+      "hr_sha256": "d5e2489c2f0255cb37c331da240b46e7bca03b4c1de26347e4d5c648a90f04bc",
+      "raw_sha256": "7b1e0059fd35b2ddd874c922ba59f9de5131b511e9c35b55dbef1af7e3edd725",
+      "sr_sha256": "b8e98ceddbe0c22ddff8f39ba70964346526dc9e87dc3a0fb3848655aa06852a",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 34.66392894465114,
+          "ssim": 0.9370332226487081
+        },
+        "rgb_shave8": {
+          "psnr": 34.0264903832995,
+          "ssim": 0.9243646868225364
+        }
+      },
+      "total_seconds": 0.4767814390361309
+    },
+    {
+      "id": "img_009",
+      "lr_shape": [
+        128,
+        128,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        128,
+        128
+      ],
+      "output_shape": [
+        1,
+        3,
+        512,
+        512
+      ],
+      "forward_seconds": 0.3234767485409975,
+      "memory": {
+        "tensor_peak_allocated_bytes": 1473595392,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "9bcb3b3fb82d7b280f6b95fff8f1f233532a103ea30addf00958e9a7a840148f",
+      "hr_sha256": "3125a99a492f32b2463b2f13f70c59ebf471cba795985a3cf5758a14f8253f1e",
+      "raw_sha256": "ff4f0d2119e709133eadc2dd9f89be72cf30a86ff037a481aed43693a2e1c160",
+      "sr_sha256": "ecd0db126b72420f56c87a2b6a0eba70d2bc3b5d58ac9f3c88134e7bd381a298",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 33.35789403910186,
+          "ssim": 0.8752099688891739
+        },
+        "rgb_shave8": {
+          "psnr": 31.058452267222588,
+          "ssim": 0.8014592943292969
+        }
+      },
+      "total_seconds": 0.8669200595468283
+    },
+    {
+      "id": "img_010",
+      "lr_shape": [
+        128,
+        128,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        128,
+        128
+      ],
+      "output_shape": [
+        1,
+        3,
+        512,
+        512
+      ],
+      "forward_seconds": 0.32238984294235706,
+      "memory": {
+        "tensor_peak_allocated_bytes": 1473595392,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "0af6f38b24c42f368780f91f9507af4cc586117900926896b5073560f54510ae",
+      "hr_sha256": "d677c11654040dc29148d2b89ccb5d583e32a059ecd52e64d4c4d67ce81476ba",
+      "raw_sha256": "410b7bebe3aacc23235cce237b5681eda9bb2a76c24f21e600f9d1bc4e5216bd",
+      "sr_sha256": "007cd47fbeb6d78944ceef20164c8c1ee1586ecdcc279253b946071884abacc4",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 27.696284887668728,
+          "ssim": 0.7610572082832355
+        },
+        "rgb_shave8": {
+          "psnr": 26.345173479790333,
+          "ssim": 0.7373582241917238
+        }
+      },
+      "total_seconds": 0.8698254711925983
+    },
+    {
+      "id": "img_011",
+      "lr_shape": [
+        128,
+        192,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        128,
+        192
+      ],
+      "output_shape": [
+        1,
+        3,
+        512,
+        768
+      ],
+      "forward_seconds": 0.56462062895298,
+      "memory": {
+        "tensor_peak_allocated_bytes": 2147024896,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "17f997a05453b562429ab081debfd1e9bef4aa9d1bde834d9bb218536ec39d04",
+      "hr_sha256": "3bc8541d0ce9699f2770fe02702862959d62374d484d661aa4911c1c2a1a70ef",
+      "raw_sha256": "c28c3134f0d002b3dcbd95809f6c42568b2e6473475ccb828029a67f4d9ce1e9",
+      "sr_sha256": "714220291521cd9a46f6318029e75b52cfad774da065d4cd020597f77f10793f",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 34.89582651851411,
+          "ssim": 0.9558838380866755
+        },
+        "rgb_shave8": {
+          "psnr": 33.36257593648807,
+          "ssim": 0.9442012400792595
+        }
+      },
+      "total_seconds": 1.3401090949773788
+    },
+    {
+      "id": "img_012",
+      "lr_shape": [
+        128,
+        128,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        128,
+        128
+      ],
+      "output_shape": [
+        1,
+        3,
+        512,
+        512
+      ],
+      "forward_seconds": 0.33251276053488255,
+      "memory": {
+        "tensor_peak_allocated_bytes": 1473609728,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "a7bc5c41d8982eab729266de71244f528b7befc94b65add6e72d1421b13e4cf8",
+      "hr_sha256": "c40805a5ba47d0da5f480858faa078eb8ba28c4e704ce9f6c3f32338a7fb5b63",
+      "raw_sha256": "77cb854f1c873b68eab6d7fb8671ff6d8e8e0f0666cea7a1b3d158c36b9a6799",
+      "sr_sha256": "b9b9fe2b352b6bf935799264a82d64b9e00d04d73f490ad49cb8855d944685a9",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 34.853076928541775,
+          "ssim": 0.8861361867657391
+        },
+        "rgb_shave8": {
+          "psnr": 31.74226899409879,
+          "ssim": 0.8000878239948047
+        }
+      },
+      "total_seconds": 0.880144290626049
+    },
+    {
+      "id": "img_013",
+      "lr_shape": [
+        164,
+        132,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        176,
+        144
+      ],
+      "output_shape": [
+        1,
+        3,
+        656,
+        528
+      ],
+      "forward_seconds": 0.5736872050911188,
+      "memory": {
+        "tensor_peak_allocated_bytes": 2210161664,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "82cd44aefdd05d6b82b9e57c2544fd5b958e86c2fa6fe45d8fce0aedec639db0",
+      "hr_sha256": "550a70ae67b871aabb9538ee832f2a2c59b5d39745670859556542ce62c8c042",
+      "raw_sha256": "2f3ac3cc0405194bad9ff571d553e782817a3dc8686d19716b03894628f327a5",
+      "sr_sha256": "15db578dc58a27e3d8cc4abc483593a150d0d5a058d18e8302f3041e2a3613d5",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 29.8259482411682,
+          "ssim": 0.9765421864607438
+        },
+        "rgb_shave8": {
+          "psnr": 28.054654778569642,
+          "ssim": 0.9636940713579566
+        }
+      },
+      "total_seconds": 1.2155179008841515
+    },
+    {
+      "id": "img_014",
+      "lr_shape": [
+        97,
+        146,
+        3
+      ],
+      "padded_input_shape": [
+        1,
+        3,
+        112,
+        160
+      ],
+      "output_shape": [
+        1,
+        3,
+        388,
+        584
+      ],
+      "forward_seconds": 0.5058911796659231,
+      "memory": {
+        "tensor_peak_allocated_bytes": 1599918080,
+        "tensor_pool_peak_reserved_bytes": 3388997632,
+        "host_peak_rss_cumulative_bytes": 3271864320
+      },
+      "input_sha256": "77046fe97858add23277b2b4b591c9d0d770da577028dd927c4937319396d4f0",
+      "hr_sha256": "501f3e84fd699fc0fb47a425b19e7b5e0207107fe242d03627d4781cd8a26282",
+      "raw_sha256": "3be738830a25f04c4875d9557eff778b26562e3349e9cbd4f87b846e60c3efdd",
+      "sr_sha256": "95e2509891402759d86988f5879a73a167f14b3d5b843a0318e0c14a88f1d7a0",
+      "metrics": {
+        "y_shave4": {
+          "psnr": 28.794621718744047,
+          "ssim": 0.8026983537917174
+        },
+        "rgb_shave8": {
+          "psnr": 27.37380032709766,
+          "ssim": 0.7912426695292191
+        }
+      },
+      "total_seconds": 0.9216755256056786
+    }
+  ],
+  "complete": true,
+  "source_sha256": {
+    "src/drct_ms/evaluation.py": "6978b749cdd02df9e7c18fbb1626bac0ffa0c6124b23c30dc9994decc8854944",
+    "src/drct_ms/models/drct.py": "2aa32ce228900912a44f9e7ece1f3301865bd5c80bd99f7a80193c445b86ab13",
+    "src/drct_ms/models/convolution.py": "4ebf56f00f79218b99ad6aea248056fc94a5b0140ee493c2f7e08ae79183135c",
+    "src/drct_ms/runtime.py": "1d374a0cdf808136b1b5d271c075713fc88e3c8e6039e1fcd9336ed6a68ebae0",
+    "tools/evaluate_set14.py": "dde6bf5d1a8099b2b5d0744ca79a74943da3a8dcf348d3ace7974fa7f4bdc6d0"
+  },
+  "average": {
+    "y_shave4": {
+      "psnr": 29.545787488023826,
+      "ssim": 0.8001310171907507
+    },
+    "rgb_shave8": {
+      "psnr": 27.73630387744793,
+      "ssim": 0.7636092128532038
+    }
+  }
+}

@@ -157,5 +157,7 @@ standalone `inference.py` 使用拼接 flip 的 padding，且已整除仍多补�
 源码分析、CPU 参数/权重审计与几何对照用于锁定迁移基线。
 后续已补齐MindSpore完整网络和严格转换/对齐工具，并在Ascend通过PYNATIVE/GRAPH O0
 两个合成空间尺寸的数值对齐，见[阶段二记录](verification/stage2.md)。
-Set14数据与PSNR/SSIM仍待实际评测。
+Stage3已固定SelfExSR作者仓库版本的14对数据并完成PSNR/SSIM及真实输入跨框架评测，
+主协议实测29.57982569dB / 0.8008819660；与论文表格的小差异及分支排查见
+[Stage3结果](verification/stage3.md)。
 后续按 [迁移清单](migration.md) 逐级推进。

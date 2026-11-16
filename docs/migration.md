@@ -20,7 +20,7 @@
 | LeakyReLU | nn.LeakyReLU | RDG slope=0.2，重建 slope=0.01 | 包含在完整网络对齐通过路径 |
 | PixelShuffle | reshape + transpose 的 nn.Cell | PyTorch 通道交错顺序；避免 DCR/CRD 歧义 | Ascend两模式逐元素对照通过 |
 | DRCT-L | 12 RDG + 全局残差 + ×4 重建 | RGB mean、img_range、patch_norm、确切参数量 | Ascend两输入PYNATIVE/GRAPH O0完整输出对齐通过 |
-| eval 包装器 | reflect pad / unpad / uint8 metrics | 与 standalone inference padding 区分；Y4 与 RGB8 分开 | 已定义协议，待实现 |
+| eval 包装器 | reflect pad / unpad / uint8 metrics | 与standalone padding区分；Y4/RGB8分开 | BasicSR参考核验及Set14全14图对照通过 |
 
 预计算 NumPy 只用于常量几何，不作为模型计算后端或 MindSpore 的替代。
 PixelShuffle 用 reshape/transpose 的等价实现必须与 PyTorch 排序精确对照。
@@ -56,9 +56,9 @@ transpose 在 Ascend 不用负轴索引。文档支持某平台不代表项目�
 3. Swin / RDG：逐层 hook 对照，避免最终输出掩盖中间排列错误；核验 0.2 与激活位置。
 4. 完整 L：参数名称/形状/数量对齐，随机输入、小幅值和真实 LR 图分别对照。
    PyTorch参考只在云端隔离环境，MindSpore目标在Ascend；不执行任何本地模型计算。
-5. 目标设备在PYNATIVE与GRAPH模式分别验证。已提供两种模式入口，尚未运行；
-   两个固定空间尺寸的编译验证也不能代表任意动态shape已支持。
-6. Set14 全图同权重、同 LR/HR、同量化、同协议，保存逐图 PSNR/SSIM。
+5. 目标设备PYNATIVE与GRAPH O0的两个合成尺寸已通过；Stage3完整Set14使用PYNATIVE。
+   不能将两尺寸GRAPH验证扩展为任意动态shape或GRAPH Set14全量已通过。
+6. Set14全图同权重、同LR/HR、同量化/协议的14图对照已通过，已保存逐图PSNR/SSIM。
    在确认偏差来源前，不为“达标”改变模型、数据或协议。
 7. 推理对齐后才做小数据训练 smoke；核验 finite gradients、loss、参数更新、
    checkpoint 恢复，再实测 step 时间、HBM，给出预算估算后申请长训练。
@@ -85,7 +85,7 @@ transpose 在 Ascend 不用负轴索引。文档支持某平台不代表项目�
 `tools.convert_checkpoint`在预置MindSpore环境完成100%参数/确定性buffer核查与保存回读；
 `tools.verify_alignment`比较完整输出，PYNATIVE可额外追踪首组五层Swin与主干节点。
 检查点分支、源哈希、中间包哈希、输出ckpt哈希和误差均进入报告。
-具体命令及首次执行预算见 [云端操作单](cloud_validation.md)。
+模型适配命令见[云端操作单](cloud_validation.md)，Stage3命令见[评测操作单](stage3_evaluation.md)。
 
 当前权重初始化以预训练加载为前提；尚未复现官方从零训练的初始化分布和随机数流。
 完整模型位于`src/drct_ms/models/drct.py`；已有Ascend执行证据，以进度和阶段记录中的

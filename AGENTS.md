@@ -15,6 +15,9 @@
 - 评测主协议按发布 YAML：量化 uint8、BT.601 Y、每边裁 4 HR 像素。
   论文 v5 的 RGB/裁8 文本与代码冲突，单独记录诊断结果，不能混用或掩盖。
 - Set14 是测试集，不作训练或改进方案的选参集。保存逐图指标、数据/权重哈希、环境与配置。
+- Stage3已完成14图EMA基线：Y/裁4，29.57982569dB / 0.8008819660；与原始PT对齐通过。
+  数据源与commit固定在`configs/set14_source.json`，证据见`docs/verification/stage3.md`。
+  论文0.8025 SSIM未逐项完全对应，不替换数据/协议/分支凑数；`params`仅为独立诊断。
 - 本地与 ModelArts 环境分开。云端先核对 Conda、Python、MindSpore、CANN 和设备，
   保留预置环境，项目和输出存 `/home/ma-user/work`。
 - 2026-11-14用户更新：所有模型/数值计算只在云端执行；本地仅源码编辑、静态检查、

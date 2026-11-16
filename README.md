@@ -2,7 +2,8 @@
 
 CV 课程大作业，目标运行环境为 **MindSpore 2.7.2 / Ascend 910B4**。
 当前已编写完整MindSpore DRCT-L、严格权重转换和逐层/完整输出对齐工具。
-Ascend PYNATIVE和GRAPH O0完整输出对齐均通过；Set14评测与训练尚未执行。
+Ascend PYNATIVE和GRAPH O0合成输入对齐均通过；Stage3的Set14完整推理和14图跨框架对齐已完成。
+训练能力属于尚未开始的Stage4。
 
 **计算约束：所有模型、参考生成、权重转换和数值测试仅在ModelArts执行。**
 本地仅编辑源码、静态检查、整理和传输文件，不安装或调用任何推理框架。
@@ -15,7 +16,11 @@ Ascend PYNATIVE和GRAPH O0完整输出对齐均通过；Set14评测与训练尚�
 - 官方权重：[DRCT-L_X4.pth](https://drive.google.com/file/d/1bVxvA6QFbne2se0CQJ-jyHFy94UOi3h5/view)。
 - 已下载并验证 `params` / `params_ema` 均严格加载通过，主分支选用 `params_ema`；
   来源、SHA-256与核验结果见[权重审计](docs/verification/checkpoint_audit.json)。
-- 作者报告的 Set14 ×4 为29.54 dB；本项目尚未测得该结果。
+- 作者报告的Set14×4参考值为29.54dB / 0.8025；本项目如实保留实测差异。
+- 实际主协议（Y/裁4，EMA）为 **29.57982569dB / 0.8008819660 SSIM**。
+  官方PyTorch同数据/协议为29.57982653 / 0.8008818045，14图raw输出全部通过原门槛。
+  论文SSIM0.8025未逐项完全对应，不将论文值当作实测或把协议差异说成模型改进。
+  数据、逐图指标和排查见[Stage3结果](docs/verification/stage3.md)。
 
 来源：[官方仓库](https://github.com/ming053l/DRCT)、
 [论文 v5](https://arxiv.org/abs/2404.00722v5)。详细证据与差异见
@@ -78,4 +83,5 @@ python -m pytest tests/test_mindspore_primitives.py tests/test_mindspore_network
 原生Ascend卷积在本环境的完整输出对齐未过原门槛，`conv_backend='native'`仅保留诊断用途；
 等价后端在两个合成输入上的最大输出绝对误差为PYNATIVE约3.16e-6、GRAPH O0约3.43e-6，
 均通过原门槛。转换后的权重已备份至`weights/drct_l_x4_params_ema.ckpt`（不进入Git）。
-这不等于Set14指标已复现。完整证据见 [适配验证记录](docs/verification/stage2.md)。
+合成输入证据见[适配验证记录](docs/verification/stage2.md)，真实14图证据见
+[Stage3结果](docs/verification/stage3.md)，重现命令见[评测操作单](docs/stage3_evaluation.md)。
