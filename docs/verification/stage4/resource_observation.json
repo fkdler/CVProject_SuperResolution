@@ -1,0 +1,12 @@
+{
+  "kind": "single npu-smi observation during corrected ReferenceAdam resumed process, not a continuously measured peak",
+  "device": "physical NPU 7 / Ascend 910B4",
+  "timestamp_utc": "2026-11-16 03:59:27 UTC",
+  "npu_smi_hbm_usage_reported_MB": 30939,
+  "npu_smi_hbm_total_reported_MB": 32768,
+  "npu_smi_process_memory_reported_MB": 28121,
+  "mindspore_allocator_peak_allocated_bytes": 6279979520,
+  "mindspore_allocator_peak_reserved_bytes": 6727848960,
+  "caveat": "npu-smi and MindSpore allocator are different accounting scopes; physical HBM peak was not continuously sampled. Do not infer batch4 capacity from allocator-only numbers.",
+  "after_tasks": "npu-smi: no running processes; HBM 2874 / 32768 MB at 2026-11-16 03:59:51 UTC"
+}

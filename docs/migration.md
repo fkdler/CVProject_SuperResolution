@@ -79,7 +79,7 @@ transpose 在 Ascend 不用负轴索引。文档支持某平台不代表项目�
 
 昂贵训练必须先实测，给出总耗时和费用，等待批准。当前阶段没有运行云端任务。
 
-## 5. 当前可运行入口（仅云端，尚待实际执行）
+## 5. 当前可运行入口（仅云端，实际证据按阶段记录）
 
 `tools.export_reference_bundle`在云端独立PyTorch环境导出官方state和中间值；
 `tools.convert_checkpoint`在预置MindSpore环境完成100%参数/确定性buffer核查与保存回读；
@@ -90,3 +90,11 @@ transpose 在 Ascend 不用负轴索引。文档支持某平台不代表项目�
 当前权重初始化以预训练加载为前提；尚未复现官方从零训练的初始化分布和随机数流。
 完整模型位于`src/drct_ms/models/drct.py`；已有Ascend执行证据，以进度和阶段记录中的
 具体模式、后端、输入与误差为准，不能推广为Set14指标或任意动态shape已通过。
+
+Stage3完整Set14已另行通过，见`docs/verification/stage3.md`。
+Stage4新增`training_data.py`、`training.py`和`tools.train`，完整L网络的2+1步PYNATIVE
+继续训练与跨进程恢复通过，见`docs/verification/stage4.md`。
+Adam/EMA/学习率边界及无随机层的连续/恢复轨迹已验证；完整网络DropPath跨进程
+随机流未保证逐位一致。当前不支持以smoke推断长训练收敛或GRAPH训练已通过。
+优化器不能直接以`nn.Adam`代替官方PyTorch Adam：原生融合算子epsilon在偏差校正前，
+微小梯度测试已失败；`ReferenceAdam`用动态epsilon缩放保持官方公式，详见Stage4证据。

@@ -1,0 +1,370 @@
+{
+  "purpose": "Full DRCT-L pretrained continuation capability smoke; not convergence or original DF2K training reproduction",
+  "environment": {
+    "mindspore": "2.7.2",
+    "python": "3.11.10",
+    "machine": "aarch64",
+    "mode": "pynative",
+    "device": "Ascend",
+    "precision": "FP32 / HF32 off"
+  },
+  "config": {
+    "purpose": "Full DRCT-L pretrained continuation capability smoke; not convergence or original DF2K training reproduction",
+    "upstream_recipe": "reference/DRCT/options/train/train_DRCT-L_SRx4_finetune_from_ImageNet_pretrain.yml",
+    "seed": 0,
+    "mode": "pynative",
+    "lr_patch_size": 64,
+    "batch_size": 1,
+    "learning_rate": 1e-05,
+    "optimizer": "ReferenceAdam: MindSpore fused Adam with bias-corrected epsilon matching PyTorch",
+    "betas": [
+      0.9,
+      0.99
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "milestones": [
+      125000,
+      200000,
+      225000,
+      240000
+    ],
+    "gamma": 0.5,
+    "ema_decay": 0.999,
+    "loss": "mean L1",
+    "hflip": true,
+    "rotation": true,
+    "validation": "DIV2K official valid split, fixed center patches, uint8 BT.601 Y / shave4",
+    "default_steps": 2,
+    "long_training_authorized": false
+  },
+  "identity": {
+    "dataset_manifest_sha256": "074aa7366df74a55b82972cc7fadc344f5904c5d3c025684dcddd4444b6bc7a2",
+    "pretrained_sha256": "146cfca01fd10398fc0ce1e52534b64f76af16dcebcfd9ae03235bcebbbb716b",
+    "model_config": {
+      "upscale": 4,
+      "in_chans": 3,
+      "img_size": 64,
+      "patch_size": 1,
+      "window_size": 16,
+      "img_range": 1.0,
+      "depths": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "embed_dim": 180,
+      "num_heads": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "gc": 32,
+      "mlp_ratio": 2,
+      "qkv_bias": true,
+      "drop_rate": 0.0,
+      "attn_drop_rate": 0.0,
+      "drop_path_rate": 0.1,
+      "ape": false,
+      "patch_norm": true,
+      "upsampler": "pixelshuffle",
+      "resi_connection": "1conv"
+    },
+    "conv_backend": "matmul",
+    "reference_manifest_sha256": "aa72213d9660c211078dda2be0cf3be1ca38988de2d2d20213762764ecd04202",
+    "source_sha256": {
+      "src/drct_ms/__init__.py": "0e834a505f961e124c5b25b0cebee59e819037fa768e7e9f34794272cd5e7c55",
+      "src/drct_ms/checkpoint.py": "7eb3f757550bdd1fee5f4a5203c69f53f21f9e1f4e0fcf910c8f1a140786ea7f",
+      "src/drct_ms/evaluation.py": "6978b749cdd02df9e7c18fbb1626bac0ffa0c6124b23c30dc9994decc8854944",
+      "src/drct_ms/models/__init__.py": "81c3d471a5dbf0bf3ff2bf1a5f647c5389e226016a563f156aba31f44a20c125",
+      "src/drct_ms/models/convolution.py": "4ebf56f00f79218b99ad6aea248056fc94a5b0140ee493c2f7e08ae79183135c",
+      "src/drct_ms/models/drct.py": "2aa32ce228900912a44f9e7ece1f3301865bd5c80bd99f7a80193c445b86ab13",
+      "src/drct_ms/models/geometry.py": "6da312794ca75c657d0d88636add860d4f2249936ca841a64c94214e1e9c13ba",
+      "src/drct_ms/models/primitives.py": "81894e18f188c8111db82c91a7c21322b0164077682466d5c560d11e85550177",
+      "src/drct_ms/runtime.py": "1d374a0cdf808136b1b5d271c075713fc88e3c8e6039e1fcd9336ed6a68ebae0",
+      "src/drct_ms/training.py": "c1c16c0f0a93577f27f36d47404bdfe11bc7ec976e9ca9f0eb0f3717f44e1f5c",
+      "src/drct_ms/training_data.py": "f7485a080ed745a9f9f0a6fec62232d3c8a95108925d91db80f6fa5a38b44f20"
+    }
+  },
+  "train_ids": [
+    "0001",
+    "0002",
+    "0003",
+    "0004"
+  ],
+  "valid_ids": [
+    "0801",
+    "0802"
+  ],
+  "modcrop_hr": [
+    {
+      "id": "0001",
+      "bottom_hr": 0,
+      "right_hr": 0
+    },
+    {
+      "id": "0002",
+      "bottom_hr": 0,
+      "right_hr": 0
+    },
+    {
+      "id": "0003",
+      "bottom_hr": 0,
+      "right_hr": 0
+    },
+    {
+      "id": "0004",
+      "bottom_hr": 0,
+      "right_hr": 0
+    },
+    {
+      "id": "0801",
+      "bottom_hr": 0,
+      "right_hr": 0
+    },
+    {
+      "id": "0802",
+      "bottom_hr": 0,
+      "right_hr": 0
+    }
+  ],
+  "updates": [
+    {
+      "step": 3,
+      "loss_l1": 0.01593148335814476,
+      "learning_rate": 9.999999747378752e-06,
+      "all_gradients_finite": true,
+      "gradient_tensors": 916,
+      "changed_parameter_tensors": 916,
+      "max_parameter_abs_update": 1.0028481483459473e-05,
+      "audited_update_seconds": 38.75536185875535,
+      "peak_allocated_bytes": 5836497920,
+      "peak_reserved_bytes": 6551502848,
+      "samples": [
+        {
+          "lr_top": 386,
+          "lr_left": 231,
+          "hflip_vflip_transpose": [
+            false,
+            true,
+            true
+          ],
+          "id": "0002",
+          "global_sample": 2,
+          "epoch": 0
+        }
+      ]
+    }
+  ],
+  "parameter_tensors": 916,
+  "parameter_elements": 27580719,
+  "rng_resume": "deterministic data position; stochastic DropPath stream is not guaranteed across process restarts",
+  "restore": {
+    "state_tensors_exactly_restored": 3667,
+    "completed_steps": 2,
+    "next_sample": 2,
+    "checkpoint_sha256": "939801be054d5ebb1429177a91f296e417777fadd66c9b71ad54505a228f3da1"
+  },
+  "initial_validation": {
+    "step": 2,
+    "weights": "live",
+    "scope": "fixed center LR patches",
+    "lr_patch_size": 64,
+    "protocol": "uint8 BT.601 Y / HR shave4",
+    "per_image": [
+      {
+        "id": "0801",
+        "psnr": 35.10741336163268,
+        "ssim": 0.9018446237853471,
+        "output_sha256": "bef5f07a6f58967bb803c502ca892ccc72d3476a5b76668d5f427e2bbf335eb4"
+      },
+      {
+        "id": "0802",
+        "psnr": 35.616824568884894,
+        "ssim": 0.896255752626625,
+        "output_sha256": "9607b5f4669a2a8f874a79b6014702cdf8d7cd9b8ee4fff053d3eaee434f49f4"
+      }
+    ],
+    "mean_psnr": 35.36211896525879,
+    "mean_ssim": 0.899050188205986
+  },
+  "next_batch_sha256": "4736bc6ec8600c28dc797d6043e2e488a9a98f3395364c9ab5a3242b9563f815",
+  "training_wall_seconds": 39.731772031635046,
+  "final_validation": {
+    "step": 3,
+    "weights": "live",
+    "scope": "fixed center LR patches",
+    "lr_patch_size": 64,
+    "protocol": "uint8 BT.601 Y / HR shave4",
+    "per_image": [
+      {
+        "id": "0801",
+        "psnr": 35.10624458171775,
+        "ssim": 0.9018497605412946,
+        "output_sha256": "970061413098310bc79abae03518e5de86992fe248e680c73db1a9d5805447b1"
+      },
+      {
+        "id": "0802",
+        "psnr": 35.61407054100327,
+        "ssim": 0.8962231395432662,
+        "output_sha256": "cbbed54c6c57720baeb7927448c7c4829fa930b120b05f2e45ff74c261dae432"
+      }
+    ],
+    "mean_psnr": 35.36015756136051,
+    "mean_ssim": 0.8990364500422804
+  },
+  "ema_validation": {
+    "step": 3,
+    "weights": "ema",
+    "scope": "fixed center LR patches",
+    "lr_patch_size": 64,
+    "protocol": "uint8 BT.601 Y / HR shave4",
+    "per_image": [
+      {
+        "id": "0801",
+        "psnr": 35.11044793036116,
+        "ssim": 0.9018481783310225,
+        "output_sha256": "19906b03019c70a29490e051fc6e76cd820255ca6f033f084f0b7f899d234ee7"
+      },
+      {
+        "id": "0802",
+        "psnr": 35.61584109735544,
+        "ssim": 0.896247081575912,
+        "output_sha256": "cad65db6953077b8740071468a00eab7f1f2186aa044cdd5989af4527ce1508c"
+      }
+    ],
+    "mean_psnr": 35.3631445138583,
+    "mean_ssim": 0.8990476299534673
+  },
+  "saved_checkpoint": {
+    "format": 1,
+    "completed_steps": 3,
+    "next_sample": 3,
+    "config": {
+      "purpose": "Full DRCT-L pretrained continuation capability smoke; not convergence or original DF2K training reproduction",
+      "upstream_recipe": "reference/DRCT/options/train/train_DRCT-L_SRx4_finetune_from_ImageNet_pretrain.yml",
+      "seed": 0,
+      "mode": "pynative",
+      "lr_patch_size": 64,
+      "batch_size": 1,
+      "learning_rate": 1e-05,
+      "optimizer": "ReferenceAdam: MindSpore fused Adam with bias-corrected epsilon matching PyTorch",
+      "betas": [
+        0.9,
+        0.99
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "milestones": [
+        125000,
+        200000,
+        225000,
+        240000
+      ],
+      "gamma": 0.5,
+      "ema_decay": 0.999,
+      "loss": "mean L1",
+      "hflip": true,
+      "rotation": true,
+      "validation": "DIV2K official valid split, fixed center patches, uint8 BT.601 Y / shave4",
+      "default_steps": 2,
+      "long_training_authorized": false
+    },
+    "identity": {
+      "dataset_manifest_sha256": "074aa7366df74a55b82972cc7fadc344f5904c5d3c025684dcddd4444b6bc7a2",
+      "pretrained_sha256": "146cfca01fd10398fc0ce1e52534b64f76af16dcebcfd9ae03235bcebbbb716b",
+      "model_config": {
+        "upscale": 4,
+        "in_chans": 3,
+        "img_size": 64,
+        "patch_size": 1,
+        "window_size": 16,
+        "img_range": 1.0,
+        "depths": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "embed_dim": 180,
+        "num_heads": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "gc": 32,
+        "mlp_ratio": 2,
+        "qkv_bias": true,
+        "drop_rate": 0.0,
+        "attn_drop_rate": 0.0,
+        "drop_path_rate": 0.1,
+        "ape": false,
+        "patch_norm": true,
+        "upsampler": "pixelshuffle",
+        "resi_connection": "1conv"
+      },
+      "conv_backend": "matmul",
+      "reference_manifest_sha256": "aa72213d9660c211078dda2be0cf3be1ca38988de2d2d20213762764ecd04202",
+      "source_sha256": {
+        "src/drct_ms/__init__.py": "0e834a505f961e124c5b25b0cebee59e819037fa768e7e9f34794272cd5e7c55",
+        "src/drct_ms/checkpoint.py": "7eb3f757550bdd1fee5f4a5203c69f53f21f9e1f4e0fcf910c8f1a140786ea7f",
+        "src/drct_ms/evaluation.py": "6978b749cdd02df9e7c18fbb1626bac0ffa0c6124b23c30dc9994decc8854944",
+        "src/drct_ms/models/__init__.py": "81c3d471a5dbf0bf3ff2bf1a5f647c5389e226016a563f156aba31f44a20c125",
+        "src/drct_ms/models/convolution.py": "4ebf56f00f79218b99ad6aea248056fc94a5b0140ee493c2f7e08ae79183135c",
+        "src/drct_ms/models/drct.py": "2aa32ce228900912a44f9e7ece1f3301865bd5c80bd99f7a80193c445b86ab13",
+        "src/drct_ms/models/geometry.py": "6da312794ca75c657d0d88636add860d4f2249936ca841a64c94214e1e9c13ba",
+        "src/drct_ms/models/primitives.py": "81894e18f188c8111db82c91a7c21322b0164077682466d5c560d11e85550177",
+        "src/drct_ms/runtime.py": "1d374a0cdf808136b1b5d271c075713fc88e3c8e6039e1fcd9336ed6a68ebae0",
+        "src/drct_ms/training.py": "c1c16c0f0a93577f27f36d47404bdfe11bc7ec976e9ca9f0eb0f3717f44e1f5c",
+        "src/drct_ms/training_data.py": "f7485a080ed745a9f9f0a6fec62232d3c8a95108925d91db80f6fa5a38b44f20"
+      }
+    },
+    "checkpoint_sha256": "da9b99ee993722fb8d6dfafc8c9bb5aeaea4f170b06c07f919fbdde1e6e84faf",
+    "state_tensors": 3667,
+    "rng_resume": "sampler exact; stochastic DropPath stream not guaranteed"
+  },
+  "roundtrip": {
+    "state_tensors_exactly_restored": 3667,
+    "completed_steps": 3,
+    "next_sample": 3,
+    "checkpoint_sha256": "da9b99ee993722fb8d6dfafc8c9bb5aeaea4f170b06c07f919fbdde1e6e84faf"
+  },
+  "roundtrip_validation_exact": true,
+  "saved_next_batch_sha256": "6b423cb99f32b1eb9e67d41dafe4fe2440f638140b4e33f3bda62a267898d4c5",
+  "passed": true
+}

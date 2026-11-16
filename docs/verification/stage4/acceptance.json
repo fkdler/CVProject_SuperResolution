@@ -1,0 +1,42 @@
+{
+  "checks": {
+    "both_runs_passed": true,
+    "same_identity": true,
+    "same_config": true,
+    "checkpoint_identity": true,
+    "validation_exact_after_process_restart": true,
+    "next_batch_exact_after_restart": true,
+    "counter_continued": true,
+    "full_model": true,
+    "every_gradient_finite": true,
+    "every_step_changed_parameters": true,
+    "split_disjoint": true
+  },
+  "passed": true,
+  "completed_updates": 3,
+  "warm_observations": 1,
+  "audited_warm_step_seconds": 1.5344579126685858,
+  "nominal_yuan_per_hour": 20.828,
+  "estimate_excludes": "initialization, data loading, per-parameter update audit, validation, checkpoints, idle/storage charges; not a bill or balance",
+  "first_run_training_wall_seconds": 39.08291183039546,
+  "peak_allocated_bytes": 6279979520,
+  "peak_reserved_bytes": 6727848960,
+  "planning_only": {
+    "100": {
+      "hours": 0.04262383090746072,
+      "yuan": 0.8877691501405919
+    },
+    "1000": {
+      "hours": 0.42623830907460714,
+      "yuan": 8.877691501405916
+    },
+    "5000": {
+      "hours": 2.131191545373036,
+      "yuan": 44.38845750702959
+    },
+    "250000": {
+      "hours": 106.5595772686518,
+      "yuan": 2219.4228753514794
+    }
+  }
+}

@@ -1,0 +1,112 @@
+......                                                                   [100%]
+=============================== warnings summary ===============================
+../../../../usr/local/Ascend/cann-8.5.2/python/site-packages/tbe/dsl/classifier/transdata/transdata_classifier.py:222
+  /usr/local/Ascend/cann-8.5.2/python/site-packages/tbe/dsl/classifier/transdata/transdata_classifier.py:222: DeprecationWarning: invalid escape sequence '\B'
+    """
+
+../../../../usr/local/Ascend/cann-8.5.2/python/site-packages/tbe/dsl/unify_schedule/vector/transdata/common/graph/transdata_graph_info.py:143
+  /usr/local/Ascend/cann-8.5.2/python/site-packages/tbe/dsl/unify_schedule/vector/transdata/common/graph/transdata_graph_info.py:143: DeprecationWarning: invalid escape sequence '\c'
+    """
+
+../../../../usr/local/Ascend/cann-8.5.2/python/site-packages/tbe/dsl/unify_schedule/vector/transdata/common/graph/transdata_graph_info.py:170
+  /usr/local/Ascend/cann-8.5.2/python/site-packages/tbe/dsl/unify_schedule/vector/transdata/common/graph/transdata_graph_info.py:170: DeprecationWarning: invalid escape sequence '\c'
+    """
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/numpy/core/getlimits.py:549
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/numpy/core/getlimits.py:549: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+    setattr(self, word, getattr(machar, word).flat[0])
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/numpy/core/getlimits.py:89
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+    return self._float_to_str(self.smallest_subnormal)
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/numpy/core/getlimits.py:549
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/numpy/core/getlimits.py:549: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+    setattr(self, word, getattr(machar, word).flat[0])
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/numpy/core/getlimits.py:89
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+    return self._float_to_str(self.smallest_subnormal)
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/batchnorm_fold2.py:57
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/batchnorm_fold2.py:57: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("batchnorm_fold2")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/batchnorm_fold2_grad.py:56
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/batchnorm_fold2_grad.py:56: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("batchnorm_fold2_grad")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/batchnorm_fold2_grad_reduce.py:48
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/batchnorm_fold2_grad_reduce.py:48: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("batchnorm_fold2_grad_reduce")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/correction_mul.py:51
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/correction_mul.py:51: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("correction_mul")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/correction_mul_grad.py:51
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/correction_mul_grad.py:51: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("correction_mul_grad")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/correction_mul_grad.py:143
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/correction_mul_grad.py:143: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("correction_mul_grad_reduce")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perlayer.py:50
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perlayer.py:50: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("fake_learned_scale_quant_perlayer")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perlayer_grad.py:92
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perlayer_grad.py:92: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("fake_learned_scale_quant_perlayer_grad_d")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perlayer_grad_reduce.py:49
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perlayer_grad_reduce.py:49: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("fake_learned_scale_quant_perlayer_grad_d_reduce")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perchannel.py:50
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perchannel.py:50: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("fake_learned_scale_quant_perchannel")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perchannel_grad.py:91
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perchannel_grad.py:91: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("fake_learned_scale_quant_perchannel_grad_d")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perchannel_grad_reduce.py:48
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_learned_scale_quant_perchannel_grad_reduce.py:48: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("fake_learned_scale_quant_perchannel_grad_d_reduce")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_quant_perchannel.py:52
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_quant_perchannel.py:52: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("fake_quant_perchannel")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_quant_perchannel_grad.py:81
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_quant_perchannel_grad.py:81: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("fake_quant_perchannel_grad")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_quant_perlayer.py:54
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_quant_perlayer.py:54: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("fake_quant_per_layer")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_quant_perlayer_grad.py:81
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/fake_quant_perlayer_grad.py:81: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("fake_quant_per_layer_grad")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/minmax_update_perchannel.py:50
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/minmax_update_perchannel.py:50: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("minmax_update_perchannel")
+
+../../anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/minmax_update_perlayer.py:50
+  /home/ma-user/anaconda3/envs/MindSpore/lib/python3.11/site-packages/mindspore/ops/_op_impl/_custom_op/minmax_update_perlayer.py:50: DeprecationWarning: te_fusion.fusion_manager.fusion_manager.register is deprecated,please replace it with tbe.common.register.register_op_compute
+    @fusion_manager.register("minmax_update_perlayer")
+
+tests/test_training.py::test_multistep_boundaries
+  /usr/local/Ascend/cann-8.5.2/python/site-packages/asc_op_compile_base/asc_op_compiler/ascendc_compile_gen_code.py:161: DeprecationWarning: invalid escape sequence '\w'
+    match = re.search(f'{option}=(\w+)', ' '.join(compile_options))
+
+tests/test_training.py: 44 warnings
+  /usr/local/Ascend/cann-8.5.2/python/site-packages/tbe/common/context/op_context.py:38: DeprecationWarning: currentThread() is deprecated, use current_thread() instead
+    return _contexts.setdefault(threading.currentThread().ident, [])
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 70 warnings in 37.57s

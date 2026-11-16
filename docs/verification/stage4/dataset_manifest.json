@@ -1,0 +1,139 @@
+{
+  "dataset": "DIV2K",
+  "source": "https://data.vision.ee.ethz.ch/cvl/DIV2K/",
+  "scale": 4,
+  "degradation": "official bicubic X4",
+  "academic_research_only": true,
+  "archives": [
+    {
+      "url": "https://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_HR.zip",
+      "etag": "\"d270bcc1-5487e5c18d636\"",
+      "bytes": 3530603713
+    },
+    {
+      "url": "https://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_LR_bicubic_X4.zip",
+      "etag": "\"eb79bf7-5487e5dc0dd36\"",
+      "bytes": 246914039
+    },
+    {
+      "url": "https://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_HR.zip",
+      "etag": "\"1ac31a65-65d51e72ef657\"",
+      "bytes": 448993893
+    },
+    {
+      "url": "https://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_LR_bicubic_X4.zip",
+      "etag": "\"1e0bdd9-5487e62c853d9\"",
+      "bytes": 31505881
+    }
+  ],
+  "pairs": [
+    {
+      "id": "0001",
+      "split": "train",
+      "hr": {
+        "file": "train/hr/0001.png",
+        "sha256": "cdb20d7a462744c269d8e197f735c7bc42e7cda367a940a9b7bc27803b1c8619",
+        "zip_member": "DIV2K_train_HR/0001.png",
+        "crc32": 2613226189,
+        "bytes": 4953978
+      },
+      "lr": {
+        "file": "train/lr/0001.png",
+        "sha256": "298669ae3b9ca2a9cd97ce09ceac427f1ea7fd006d61aead44e27433f28594dd",
+        "zip_member": "DIV2K_train_LR_bicubic/X4/0001x4.png",
+        "crc32": 2769111154,
+        "bytes": 378384
+      }
+    },
+    {
+      "id": "0002",
+      "split": "train",
+      "hr": {
+        "file": "train/hr/0002.png",
+        "sha256": "82325cea74c2cd4681f69a10e36ba15c896d99ec47dc2c687ef07f7497781e09",
+        "zip_member": "DIV2K_train_HR/0002.png",
+        "crc32": 2831733478,
+        "bytes": 7105219
+      },
+      "lr": {
+        "file": "train/lr/0002.png",
+        "sha256": "1f62e6e288f5a1c0a7b231458e075519ff61dfb4613c5062acdb40db03dc6e65",
+        "zip_member": "DIV2K_train_LR_bicubic/X4/0002x4.png",
+        "crc32": 4141235453,
+        "bytes": 400893
+      }
+    },
+    {
+      "id": "0003",
+      "split": "train",
+      "hr": {
+        "file": "train/hr/0003.png",
+        "sha256": "ca9df4e0b258dee3ca63182e7204096818356a63e44f7c6eb3a632ca91516eb3",
+        "zip_member": "DIV2K_train_HR/0003.png",
+        "crc32": 4047003920,
+        "bytes": 5269346
+      },
+      "lr": {
+        "file": "train/lr/0003.png",
+        "sha256": "27bbc8e02fa8bf32ebe625c5748f7df600657cee70cfe01b23ce4e5f9709221b",
+        "zip_member": "DIV2K_train_LR_bicubic/X4/0003x4.png",
+        "crc32": 777550991,
+        "bytes": 363525
+      }
+    },
+    {
+      "id": "0004",
+      "split": "train",
+      "hr": {
+        "file": "train/hr/0004.png",
+        "sha256": "6675cdedc1665477fd40ea026080083244aab895012e2571383661c1d5614776",
+        "zip_member": "DIV2K_train_HR/0004.png",
+        "crc32": 141498020,
+        "bytes": 3126327
+      },
+      "lr": {
+        "file": "train/lr/0004.png",
+        "sha256": "769a4348faf30ee32cb6b7f92483a65f74f77516a55b08701067d06afac7b423",
+        "zip_member": "DIV2K_train_LR_bicubic/X4/0004x4.png",
+        "crc32": 379526499,
+        "bytes": 211257
+      }
+    },
+    {
+      "id": "0801",
+      "split": "valid",
+      "hr": {
+        "file": "valid/hr/0801.png",
+        "sha256": "ab5cf6a1cac2d1c2d0792dbd274fd2e53e42118ab6537771a825fd87aa28a60c",
+        "zip_member": "DIV2K_valid_HR/0801.png",
+        "crc32": 1473591438,
+        "bytes": 4717456
+      },
+      "lr": {
+        "file": "valid/lr/0801.png",
+        "sha256": "18af746fa8a2e1f7542f2ed9bb48a7ba687157407d2ed674948f47b1f5268bc9",
+        "zip_member": "DIV2K_valid_LR_bicubic/X4/0801x4.png",
+        "crc32": 3742380772,
+        "bytes": 377554
+      }
+    },
+    {
+      "id": "0802",
+      "split": "valid",
+      "hr": {
+        "file": "valid/hr/0802.png",
+        "sha256": "4ad6f3ca8bf740192042978121f05ec493ddbe5a3da5584eaf0d9699c25ee431",
+        "zip_member": "DIV2K_valid_HR/0802.png",
+        "crc32": 1193035056,
+        "bytes": 4122447
+      },
+      "lr": {
+        "file": "valid/lr/0802.png",
+        "sha256": "99a1d2444849dc4f6e555b3d8df3da51d5908476740ed30e5881dd168b23e527",
+        "zip_member": "DIV2K_valid_LR_bicubic/X4/0802x4.png",
+        "crc32": 4077570741,
+        "bytes": 312776
+      }
+    }
+  ]
+}

@@ -1,2 +1,4 @@
 * text=auto eol=lf
 *.npz -text
+# Preserve the exact captured bytes used in Stage4 checkpoint identities.
+docs/verification/stage4/dataset_manifest.json -text whitespace=cr-at-eol

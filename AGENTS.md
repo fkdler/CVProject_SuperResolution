@@ -18,6 +18,9 @@
 - Stage3已完成14图EMA基线：Y/裁4，29.57982569dB / 0.8008819660；与原始PT对齐通过。
   数据源与commit固定在`configs/set14_source.json`，证据见`docs/verification/stage3.md`。
   论文0.8025 SSIM未逐项完全对应，不替换数据/协议/分支凑数；`params`仅为独立诊断。
+- Stage4已通过完整L网络PYNATIVE/batch1/LR64的2+1步训练与跨进程恢复；证据见`docs/verification/stage4.md`。
+  长训练未启动，原batch4/GRAPH训练/完整收敛均未验证；不在四张smoke训练图上追加长训练。
+  优化器必须使用`ReferenceAdam`的偏差校正epsilon适配；原生`nn.Adam`微小梯度语义不一致，不能静默替回。
 - 本地与 ModelArts 环境分开。云端先核对 Conda、Python、MindSpore、CANN 和设备，
   保留预置环境，项目和输出存 `/home/ma-user/work`。
 - 2026-11-14用户更新：所有模型/数值计算只在云端执行；本地仅源码编辑、静态检查、
@@ -25,7 +28,8 @@
   不使用本地CPU/GPU/NPU做实验。既有本地参考环境不再使用。
 - 需要启动既有Notebook和SSH连接时先通知用户，待其确认实例就绪；不要自行启动实例。
 - 总预算约600元，不创建额外付费实例；长时间或大规模训练先实测并估算费用，等待用户批准。
-- 不读取、输出或提交 SSH 私钥。保留 SSH 主机验证；不在代码和日志中写凭据。
+- 不读取、输出或提交 SSH 私钥；不在代码和日志中写凭据。
+  2026-11-16用户更新：跳过人工核对SSH指纹，使用任务专用known_hosts和accept-new自动接纳新主机；不改全局SSH配置。
 - 数据集、大权重、缓存及大日志不进 Git；小型审计摘要和约50KB的基础模块参考数据可跟踪。
 - 本地只允许 `python -S tools/static_check.py` 等纯文本静态检查，不运行pytest。
   数值测试、参考生成、转换和推理入口均应有ModelArts Linux ARM64/work目录保护。
