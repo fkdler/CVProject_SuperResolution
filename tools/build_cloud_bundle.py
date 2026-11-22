@@ -18,6 +18,7 @@ def main():
         for path in (ROOT / directory).rglob("*"):
             if path.is_file() and "__pycache__" not in path.parts and path.suffix in {".py", ".json", ".npz"}:
                 selected.add(path)
+    selected.update((ROOT / "docs/verification/experiment_baseline").glob("*.json"))
     for relative in [
         "AGENTS.md", "README.md", "THIRD_PARTY_NOTICES.md", "pyproject.toml", "reference/manifest.json",
         "licenses/BasicSR-Apache-2.0.txt",
@@ -26,6 +27,7 @@ def main():
         "docs/verification/checkpoint_audit.json", "data/README.md", "weights/README.md",
         "docs/verification/stage2.md",
         "docs/stage4_training.md",
+        "docs/experiment_baseline.md",
         "docs/verification/stage4.md",
         "docs/verification/stage4/acceptance.json",
         "docs/verification/stage4/dataset_manifest.json",
@@ -54,6 +56,7 @@ def main():
         "docs/verification/stage3/params_conversion.json",
         "docs/verification/ascend_stage2/alignment_pynative_matmul.json",
         "docs/verification/ascend_stage2/alignment_graph_matmul.json",
+        "docs/verification/ascend_stage2/drct_l_x4_params_ema.json",
         "reference/DRCT/drct/archs/DRCT_arch.py", "reference/DRCT/LICENSE",
         "reference/DRCT/options/test/DRCT_SRx4.yml",
         "reference/DRCT/options/test/DRCT-L_SRx4_ImageNet-pretrain.yml",

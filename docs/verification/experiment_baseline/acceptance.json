@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "checks": {
+    "same_plan_source_and_data": true,
+    "optimizer_step_and_state_restored": true,
+    "next_batch_identical": true,
+    "full_model_updated_through_target": true,
+    "training_and_validation_are_disjoint": true,
+    "exported_ema_link": true,
+    "quality_has_same_full_images_and_protocol": true,
+    "benchmark_measured_both_shapes_with_official_ema": true
+  },
+  "dataset_manifest_sha256": "9654b00c1381888c20736fc8bc0559588db86ef93306a6e94e971168f98c5cd8",
+  "official_ema_sha256": "146cfca01fd10398fc0ce1e52534b64f76af16dcebcfd9ae03235bcebbbb716b",
+  "step64_ema_sha256": "6732651e7e7a8004bf853e8407bcad27b8c8240fe21ed0261b45172998af1dd2",
+  "div2k_full_image_official": {
+    "psnr": 32.07353678972375,
+    "ssim": 0.9005994266856262
+  },
+  "div2k_full_image_step64": {
+    "psnr": 32.07347715331545,
+    "ssim": 0.9006123188020507
+  },
+  "training_wall_seconds": 364.80857483809814,
+  "median_training_update_seconds": [
+    1.7273149800021201,
+    1.6588359649758786
+  ],
+  "benchmark": [
+    {
+      "input_shape": [
+        1,
+        3,
+        64,
+        64
+      ],
+      "p50_ms": 265.2355385,
+      "p95_ms": 279.2268426,
+      "allocator_peak_bytes": 563998720,
+      "pool_peak_reserved_bytes": 687865856,
+      "parameter_elements": 27580719
+    },
+    {
+      "input_shape": [
+        1,
+        3,
+        256,
+        256
+      ],
+      "p50_ms": 1233.419461,
+      "p95_ms": 1239.88987195,
+      "allocator_peak_bytes": 5513742336,
+      "pool_peak_reserved_bytes": 6887047168,
+      "parameter_elements": 27580719
+    }
+  ]
+}

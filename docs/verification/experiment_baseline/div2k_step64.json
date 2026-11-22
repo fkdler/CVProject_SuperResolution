@@ -1,0 +1,279 @@
+{
+  "split": "div2k-valid",
+  "scope": "full-image",
+  "protocol": {
+    "channel": "BT.601 Y",
+    "crop_border_hr": 4
+  },
+  "quantization": "uint8 before metrics",
+  "padding": "right/bottom reflect to window",
+  "dataset_manifest_sha256": "9654b00c1381888c20736fc8bc0559588db86ef93306a6e94e971168f98c5cd8",
+  "checkpoint": {
+    "kind": "experiment_ema",
+    "branch": "params_ema",
+    "checkpoint_sha256": "6732651e7e7a8004bf853e8407bcad27b8c8240fe21ed0261b45172998af1dd2",
+    "source_checkpoint_sha256": "a99044c0275699d1a296ae21b8f322fa8c65d7b9be2213ee2a3dcc280ab8d64b",
+    "config": {
+      "upscale": 4,
+      "in_chans": 3,
+      "img_size": 64,
+      "patch_size": 1,
+      "window_size": 16,
+      "img_range": 1.0,
+      "depths": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "embed_dim": 180,
+      "num_heads": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "gc": 32,
+      "mlp_ratio": 2,
+      "qkv_bias": true,
+      "drop_rate": 0.0,
+      "attn_drop_rate": 0.0,
+      "drop_path_rate": 0.1,
+      "ape": false,
+      "patch_norm": true,
+      "upsampler": "pixelshuffle",
+      "resi_connection": "1conv"
+    },
+    "step": 64,
+    "training_checkpoint_sha256": "1438ae26b84446fe1347d8dbab7fab9f9030b17c60492c84d4ca61419cee6c39",
+    "identity": {
+      "dataset_manifest_sha256": "9654b00c1381888c20736fc8bc0559588db86ef93306a6e94e971168f98c5cd8",
+      "pretrained_sha256": "146cfca01fd10398fc0ce1e52534b64f76af16dcebcfd9ae03235bcebbbb716b",
+      "model_config": {
+        "upscale": 4,
+        "in_chans": 3,
+        "img_size": 64,
+        "patch_size": 1,
+        "window_size": 16,
+        "img_range": 1.0,
+        "depths": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "embed_dim": 180,
+        "num_heads": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "gc": 32,
+        "mlp_ratio": 2,
+        "qkv_bias": true,
+        "drop_rate": 0.0,
+        "attn_drop_rate": 0.0,
+        "drop_path_rate": 0.1,
+        "ape": false,
+        "patch_norm": true,
+        "upsampler": "pixelshuffle",
+        "resi_connection": "1conv"
+      },
+      "conv_backend": "matmul",
+      "total_steps": 64,
+      "source_sha256": {
+        "src/drct_ms/__init__.py": "0e834a505f961e124c5b25b0cebee59e819037fa768e7e9f34794272cd5e7c55",
+        "src/drct_ms/checkpoint.py": "7eb3f757550bdd1fee5f4a5203c69f53f21f9e1f4e0fcf910c8f1a140786ea7f",
+        "src/drct_ms/evaluation.py": "6978b749cdd02df9e7c18fbb1626bac0ffa0c6124b23c30dc9994decc8854944",
+        "src/drct_ms/models/__init__.py": "81c3d471a5dbf0bf3ff2bf1a5f647c5389e226016a563f156aba31f44a20c125",
+        "src/drct_ms/models/convolution.py": "4ebf56f00f79218b99ad6aea248056fc94a5b0140ee493c2f7e08ae79183135c",
+        "src/drct_ms/models/drct.py": "2aa32ce228900912a44f9e7ece1f3301865bd5c80bd99f7a80193c445b86ab13",
+        "src/drct_ms/models/geometry.py": "6da312794ca75c657d0d88636add860d4f2249936ca841a64c94214e1e9c13ba",
+        "src/drct_ms/models/primitives.py": "81894e18f188c8111db82c91a7c21322b0164077682466d5c560d11e85550177",
+        "src/drct_ms/runtime.py": "1d374a0cdf808136b1b5d271c075713fc88e3c8e6039e1fcd9336ed6a68ebae0",
+        "src/drct_ms/training.py": "c1c16c0f0a93577f27f36d47404bdfe11bc7ec976e9ca9f0eb0f3717f44e1f5c",
+        "src/drct_ms/training_data.py": "f7485a080ed745a9f9f0a6fec62232d3c8a95108925d91db80f6fa5a38b44f20",
+        "tools/experiment.py": "0c59e41084d279a46b75c7edc326a8982b5fc7255c5fd9d7d19aa8236ed48713",
+        "tools/experiment_data.py": "e09f0aa7d906038e2a0c5802211cdf627182d6fa9372fc28df348b37d54710d7"
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "0801",
+      "lr_shape": [
+        339,
+        510
+      ],
+      "bottom_hr": 0,
+      "right_hr": 0,
+      "lr_sha256": "18af746fa8a2e1f7542f2ed9bb48a7ba687157407d2ed674948f47b1f5268bc9",
+      "hr_sha256": "ab5cf6a1cac2d1c2d0792dbd274fd2e53e42118ab6537771a825fd87aa28a60c",
+      "psnr": 31.43498856528577,
+      "ssim": 0.877486973057247
+    },
+    {
+      "id": "0814",
+      "lr_shape": [
+        339,
+        510
+      ],
+      "bottom_hr": 0,
+      "right_hr": 0,
+      "lr_sha256": "61fbe052053f913636127b4f60fcacf758f55c3eb095a8eaf0a80f2c4e0ad628",
+      "hr_sha256": "2fec903d11d2a79070268a4316c100f8314eaadd8f8a65cce152f14826f04876",
+      "psnr": 30.996734969540046,
+      "ssim": 0.9297055440634632
+    },
+    {
+      "id": "0827",
+      "lr_shape": [
+        384,
+        510
+      ],
+      "bottom_hr": 0,
+      "right_hr": 0,
+      "lr_sha256": "de7e7c4abc158b57a74e691f585005eb5de81104658bdf29d4ffcc301b9a3af0",
+      "hr_sha256": "e8cfa94ed77a021b63da63406940de3a830fe1217e752b5929d50602a1aaa407",
+      "psnr": 35.92338363379787,
+      "ssim": 0.9128419407973514
+    },
+    {
+      "id": "0840",
+      "lr_shape": [
+        339,
+        510
+      ],
+      "bottom_hr": 0,
+      "right_hr": 0,
+      "lr_sha256": "fdf4cda0e2300149963510c2f59a899bcf75f080565be64fdd90101d3c5adba4",
+      "hr_sha256": "e023c2b2628b7d897d69150baa40be6ceda9fe0e45a0d51348011c6a47b44d86",
+      "psnr": 30.335802346158033,
+      "ssim": 0.8454780673039294
+    },
+    {
+      "id": "0853",
+      "lr_shape": [
+        339,
+        510
+      ],
+      "bottom_hr": 0,
+      "right_hr": 0,
+      "lr_sha256": "fd5caf1f221c73036990e50237ec5e3d72c1d741df0e195ddddb5d8b0b447c94",
+      "hr_sha256": "854189ea5c2a325324500c6cf7168e0b78d30b09606eb5a59f938a5ae69139fe",
+      "psnr": 37.04251944887977,
+      "ssim": 0.9574706693358638
+    },
+    {
+      "id": "0866",
+      "lr_shape": [
+        510,
+        339
+      ],
+      "bottom_hr": 0,
+      "right_hr": 0,
+      "lr_sha256": "4aca7386938f7af2a530f6dbfc29a5ca70ec9ec3028059ad7c3ed71acbbe6470",
+      "hr_sha256": "7fc232b9294ea4e6f32bdacc26f314efc067ee0359c5ff1a7000ec61c8da8511",
+      "psnr": 26.850484970578666,
+      "ssim": 0.8299021789991248
+    },
+    {
+      "id": "0879",
+      "lr_shape": [
+        468,
+        510
+      ],
+      "bottom_hr": 0,
+      "right_hr": 0,
+      "lr_sha256": "b780839639a80e9a163ab82f8e9849b119f6d23dd971cce9383c0d870359e00f",
+      "hr_sha256": "ad5eb9637c891994c00f44358cf0a5238f642b8796b5cacaa8b59ba8bb51553a",
+      "psnr": 29.596102083288542,
+      "ssim": 0.8992637862080037
+    },
+    {
+      "id": "0892",
+      "lr_shape": [
+        321,
+        510
+      ],
+      "bottom_hr": 0,
+      "right_hr": 0,
+      "lr_sha256": "e95aebc62748c232bfc5942ad506e5d2d31323b7d10cb977a10287065293ce0b",
+      "hr_sha256": "7fb05e491f00963e64b53a0f3f7a3d1af51f1434e7fd4898d4b84c479e1f66f9",
+      "psnr": 34.40780120899491,
+      "ssim": 0.9527493906514224
+    }
+  ],
+  "environment": {
+    "mindspore": "2.7.2",
+    "python": "3.11.10",
+    "machine": "aarch64",
+    "device": "Ascend",
+    "mode": "pynative",
+    "precision": "FP32 / HF32 off",
+    "conv_backend": "matmul"
+  },
+  "source_sha256": {
+    "src/drct_ms/__init__.py": "0e834a505f961e124c5b25b0cebee59e819037fa768e7e9f34794272cd5e7c55",
+    "src/drct_ms/checkpoint.py": "7eb3f757550bdd1fee5f4a5203c69f53f21f9e1f4e0fcf910c8f1a140786ea7f",
+    "src/drct_ms/evaluation.py": "6978b749cdd02df9e7c18fbb1626bac0ffa0c6124b23c30dc9994decc8854944",
+    "src/drct_ms/models/__init__.py": "81c3d471a5dbf0bf3ff2bf1a5f647c5389e226016a563f156aba31f44a20c125",
+    "src/drct_ms/models/convolution.py": "4ebf56f00f79218b99ad6aea248056fc94a5b0140ee493c2f7e08ae79183135c",
+    "src/drct_ms/models/drct.py": "2aa32ce228900912a44f9e7ece1f3301865bd5c80bd99f7a80193c445b86ab13",
+    "src/drct_ms/models/geometry.py": "6da312794ca75c657d0d88636add860d4f2249936ca841a64c94214e1e9c13ba",
+    "src/drct_ms/models/primitives.py": "81894e18f188c8111db82c91a7c21322b0164077682466d5c560d11e85550177",
+    "src/drct_ms/runtime.py": "1d374a0cdf808136b1b5d271c075713fc88e3c8e6039e1fcd9336ed6a68ebae0",
+    "src/drct_ms/training.py": "c1c16c0f0a93577f27f36d47404bdfe11bc7ec976e9ca9f0eb0f3717f44e1f5c",
+    "src/drct_ms/training_data.py": "f7485a080ed745a9f9f0a6fec62232d3c8a95108925d91db80f6fa5a38b44f20",
+    "tools/experiment.py": "8ac833d288b90ac5f120cc78c7138d41142041331311b10640938823665eec55",
+    "tools/experiment_data.py": "e09f0aa7d906038e2a0c5802211cdf627182d6fa9372fc28df348b37d54710d7"
+  },
+  "evaluation_order": [
+    "0879",
+    "0827",
+    "0801",
+    "0814",
+    "0840",
+    "0853",
+    "0866",
+    "0892"
+  ],
+  "complete": true,
+  "average": {
+    "psnr": 32.07347715331545,
+    "ssim": 0.9006123188020507
+  }
+}

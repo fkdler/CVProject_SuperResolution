@@ -1,0 +1,26 @@
+{
+  "dataset_selection": "configs/div2k_baseline_selection.json",
+  "total_steps": 64,
+  "training": {
+    "seed": 0,
+    "mode": "pynative",
+    "lr_patch_size": 64,
+    "batch_size": 1,
+    "learning_rate": 0.00001,
+    "betas": [0.9, 0.99],
+    "eps": 1e-8,
+    "weight_decay": 0.0,
+    "milestones": [125000, 200000, 225000, 240000],
+    "gamma": 0.5,
+    "ema_decay": 0.999,
+    "hflip": true,
+    "rotation": true
+  },
+  "benchmark": {
+    "mode": "pynative",
+    "seed": 0,
+    "warmup": 5,
+    "repeats": 20,
+    "shapes_lr": [[64, 64], [256, 256]]
+  }
+}

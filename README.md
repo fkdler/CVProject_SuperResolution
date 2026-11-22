@@ -89,3 +89,6 @@ python -m pytest tests/test_mindspore_primitives.py tests/test_mindspore_network
 Stage4已通过完整L网络的2+1步云端训练与跨进程恢复：DIV2K配对裁剪/增强、L1/Adam/EMA、
 严格训练状态恢复及日志均可用。长训练尚未启动，须由实际速度与预算决定；
 见[训练操作单](docs/stage4_training.md)及[验收记录](docs/verification/stage4.md)。
+
+改动模型前使用 [对照实验操作单](docs/experiment_baseline.md) 复跑原版短微调、
+DIV2K 全图 Y/裁4 评测，以及 Ascend 固定尺寸延迟和内存基线。
